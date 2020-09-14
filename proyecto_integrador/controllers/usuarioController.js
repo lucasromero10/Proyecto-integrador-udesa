@@ -9,3 +9,5 @@ let usuarioController = {
         
     },
 }
+
+module.exports = usuarioController;
