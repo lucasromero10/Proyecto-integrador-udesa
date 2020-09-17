@@ -8,6 +8,11 @@ let homeController = {
     resultadoBsuqueda: function (req, res) {
         
     },
+    detalleUsuario: function (req,res){
+     res.render('detalleUsuario', { title: 'detalleUsuario' });
+          
+
+    }
 }
 
 module.exports = homeController;
