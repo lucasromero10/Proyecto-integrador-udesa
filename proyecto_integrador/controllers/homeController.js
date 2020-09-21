@@ -3,10 +3,10 @@ let homeController = {
         
     },
     detallePost: function (req, res) {
-        
+     res.render('detallePost',{title:'detallePost' })   
     },
-    resultadoBsuqueda: function (req, res) {
-        
+    resultadoBusqueda: function (req, res) {
+     res.render('resultadoBusqueda',{title: 'resultadoBusqueda'})   
     },
     detalleUsuario: function (req,res){
      res.render('detalleUsuario', { title: 'detalleUsuario' });

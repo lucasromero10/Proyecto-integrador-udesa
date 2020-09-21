@@ -7,8 +7,17 @@ const homeController = require("../controllers/homeController");
 router.get('/', function(req, res) {
     res.render('home', { title: 'home' });
   });
+//Ruta detalle usuario
+//localhost:3000/home/detalleusuario/id=
+router.get('/detalleUsuario/:id',homeController.detalleUsuario);
 
-router.get('/detalleUsuario',homeController.detalleUsuario);
+//Ruta detalle post
+//localhost:3000/home/detallePost/id=
+router.get('/detallePost/:id',homeController.detallePost);
 
+
+//Ruta resultado busqueda
+//localhost:3000/home/resultadoBusqueda
+router.get('/resultadoBusqueda',homeController.resultadoBusqueda);
 
 module.exports = router;
