@@ -8,6 +8,9 @@ router.get('/', function(req, res) {
     res.render('miPerfil', { title: 'miPerfil' });
   });
 
+router.get('/registracion',function(req,res){
+  
+})
 
 
 
