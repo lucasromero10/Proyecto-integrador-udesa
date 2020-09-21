@@ -1,5 +1,6 @@
 /* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 /* FONTS */
 
 
@@ -24,12 +25,12 @@ header nav ul li a:hover{
     margin: 0px;
 }
 .logo a{
-    font-family: 'Fjalla One', sans-serif;
+    font-family: 'Pacifico', cursive;
     color: white;
 }
 .logo a:hover {
     text-decoration: none;
-    color: white;
+    color: grey;
 }
 header ul{
     margin: 0;
