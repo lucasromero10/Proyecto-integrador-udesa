@@ -3,10 +3,10 @@
 
 <head>
     <link rel="stylesheet" href="/stylesheets/resultadoBusqueda.css">
-    <%- include("headGeneral") %> 
 </head>
 
 <header>
+    <%- include("headGeneral") %>
     <%- include("headerLogueado") %> 
 </header>
 
@@ -17,18 +17,25 @@
 
     <main>
         <h1 class="h1general">Resultados de búsqueda</h1>
-        
+
         <h3>Usuarios Encontrados</h3>
 
-        <div class="uk-container uk-container-large uk-flex">
-            <ul class="lista">
-                <li><a href="http://localhost:3000/home/detalleUsuario/1" uk-icon="icon: user" style="text-decoration: none"><div class="grid-item">Tony Montana</div> </a></li>  
-                <li><a href="http://localhost:3000/home/detalleUsuario/1" uk-icon="icon: user" style="text-decoration: none"><div class="grid-item">Tony Montana</div> </a></li>  
-                <li><a href="http://localhost:3000/home/detalleUsuario/1" uk-icon="icon: user" style="text-decoration: none"><div class="grid-item">Tony Montana</div> </a></li>  
-                <li><a href="http://localhost:3000/home/detalleUsuario/1" uk-icon="icon: user" style="text-decoration: none"><div class="grid-item">Tony Montana</div> </a></li>  
-                <li><a href="http://localhost:3000/home/detalleUsuario/1" uk-icon="icon: user" style="text-decoration: none"><div class="grid-item">Tony Montana</div> </a></li>  
-            </ul>
+
+        <div class="uk-section uk-section-small">
+            <div class="uk-container uk-container-large uk-flex">
+                <section id="posts" class="uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-child-width-1-2 uk-width-1-1">
+                    <ul class="lista">
+                        <li><a href="http://localhost:3000/home/detalleUsuario/1" style="text-decoration: none"><div class="grid-item" uk-icon="icon: user">Tony Montana</div> </a></li>  
+                        <li><a href="http://localhost:3000/home/detalleUsuario/1" style="text-decoration: none"><div class="grid-item" uk-icon="icon: user">Tony Montana</div> </a></li>  
+                        <li><a href="http://localhost:3000/home/detalleUsuario/1" style="text-decoration: none"><div class="grid-item" uk-icon="icon: user">Tony Montana</div> </a></li>  
+                        <li><a href="http://localhost:3000/home/detalleUsuario/1" style="text-decoration: none"><div class="grid-item" uk-icon="icon: user">Tony Montana</div> </a></li>  
+                        <li><a href="http://localhost:3000/home/detalleUsuario/1" style="text-decoration: none"><div class="grid-item" uk-icon="icon: user">Tony Montana</div> </a></li>  
+                    </ul>
+                </section>
+            </div>
         </div>
+
+           
 
     </main>
 
