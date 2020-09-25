@@ -6,40 +6,29 @@
     <%- include("headGeneral") %> 
 </head>
 
-<header>
-    <%- include("headerLogueado") %> 
-</header>
-
 <body>
     <%- //if usuarioLogueado%>
+    <%- include("headerLogueado") %> 
     <% //If usuarioDeslogueado %>
     <% //include("headerDeslogueado")%>  
 
     <main>
         <h1 class="h1general">Resultados de búsqueda</h1>
-        
-        <h3>Usuarios Encontrados</h3>
-
-        <div class="uk-container uk-container-large uk-flex">
-            <ul class="lista">
-                <li><a href="http://localhost:3000/home/detalleUsuario/1" uk-icon="icon: user" style="text-decoration: none"><div class="grid-item">Tony Montana</div> </a></li>  
-                <li><a href="http://localhost:3000/home/detalleUsuario/1" uk-icon="icon: user" style="text-decoration: none"><div class="grid-item">Tony Montana</div> </a></li>  
-                <li><a href="http://localhost:3000/home/detalleUsuario/1" uk-icon="icon: user" style="text-decoration: none"><div class="grid-item">Tony Montana</div> </a></li>  
-                <li><a href="http://localhost:3000/home/detalleUsuario/1" uk-icon="icon: user" style="text-decoration: none"><div class="grid-item">Tony Montana</div> </a></li>  
-                <li><a href="http://localhost:3000/home/detalleUsuario/1" uk-icon="icon: user" style="text-decoration: none"><div class="grid-item">Tony Montana</div> </a></li>  
-            </ul>
-        </div>
-
+        <ul class="lista">
+  <h3>Usuarios Encontrados</h3>
+           <li><a href="http://localhost:3000/home/detalleUsuario/1" uk-icon="icon: user" style="text-decoration: none"><div class="grid-item">Tony Montana</div> </a>  
+    <li><a href="http://localhost:3000/home/detalleUsuario/1" uk-icon="icon: user" style="text-decoration: none"><div class="grid-item">Tony Montana</div> </a>  
+         <li><a href="http://localhost:3000/home/detalleUsuario/1" uk-icon="icon: user" style="text-decoration: none"><div class="grid-item">Tony Montana</div> </a>  
+        <li><a href="http://localhost:3000/home/detalleUsuario/1" uk-icon="icon: user" style="text-decoration: none"><div class="grid-item">Tony Montana</div> </a>  
+        <li><a href="http://localhost:3000/home/detalleUsuario/1" uk-icon="icon: user" style="text-decoration: none"><div class="grid-item">Tony Montana</div> </a>  
+        </li>
+        </ul>
+            
     </main>
 
-
-    
+    <%- include("footer") %> 
 
 
 </body>
-
-<footer>
-    <%- include("footer") %> 
-</footer>
 
 </html>
