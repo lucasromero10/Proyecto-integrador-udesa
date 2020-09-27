@@ -18,12 +18,6 @@ main{
     margin-bottom: 40px;
 };
 
-<<<<<<< Updated upstream
-h1{
-    color: green;
-};
-=======
->>>>>>> Stashed changes
 
 h2{
     font-family: 'Ubuntu';
@@ -32,15 +26,11 @@ h2{
     font-display: swap;
 };
 
-<<<<<<< Updated upstream
-.h3-.uk-card-default .uk-card-title{
-=======
 h3{
     font-family: 'Poppins' ,sans-serif;
     font-style: normal;
     font-weight: 900;
     font-display: swap;
->>>>>>> Stashed changes
     color: green;
 };
 
