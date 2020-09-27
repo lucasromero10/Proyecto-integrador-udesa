@@ -17,7 +17,7 @@ main{
     margin-bottom: 40px;
 };
 
-.uk-h1{
+h1{
     color: green;
 };
 
@@ -28,11 +28,7 @@ h2{
     font-display: swap;
 };
 
-.h3-general{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 900;
-    font-display: swap;
+.h3-.uk-card-default .uk-card-title{
     color: green;
 };
 
