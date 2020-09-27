@@ -1,5 +1,6 @@
 /* FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;1,300;1,500&family=Pacifico&family=Roboto:ital,wght@0,300;0,400;0,900;1,300;1,900&family=Ubuntu:ital,wght@0,300;0,700;1,300;1,700&display=swap');
+
+
 /* Rules to famlies:
 font-family: 'Montserrat', sans-serif;
 font-family: 'Pacifico', cursive;
@@ -17,9 +18,12 @@ main{
     margin-bottom: 40px;
 };
 
+<<<<<<< Updated upstream
 h1{
     color: green;
 };
+=======
+>>>>>>> Stashed changes
 
 h2{
     font-family: 'Ubuntu';
@@ -28,7 +32,15 @@ h2{
     font-display: swap;
 };
 
+<<<<<<< Updated upstream
 .h3-.uk-card-default .uk-card-title{
+=======
+h3{
+    font-family: 'Poppins' ,sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+>>>>>>> Stashed changes
     color: green;
 };
 
@@ -77,3 +89,5 @@ li{
 h1{
     font-family: 'Yanone Kaffeesatz', sans-serif;
 }
+
+
