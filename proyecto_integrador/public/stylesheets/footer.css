@@ -1,4 +1,5 @@
 footer{
+    background-color: rgb(211, 59, 211);
     height: 40px;
     color: white;
     padding: 0 10px;
@@ -10,4 +11,8 @@ footer ul{
 
 footer ul li{
     margin-top: 0;
+}
+
+.uk-background-primary{
+    background-color: rgb(211, 59, 211);
 }

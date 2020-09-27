@@ -17,11 +17,8 @@ main{
     margin-bottom: 40px;
 };
 
-h1{
-    font-family: 'Ubuntu';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
+.uk-h1{
+    color: green;
 };
 
 h2{
@@ -31,23 +28,40 @@ h2{
     font-display: swap;
 };
 
-h3{
+.h3-general{
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 900;
     font-display: swap;
+    color: green;
 };
 
 h4{
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 300;
     font-display: swap;
 };
 
 a{
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', sans-serif;
     font-style: italic;
     font-weight: 300;
     font-display: swap;
 };
+
+.uk-background-primary{
+    background-color: rgb(211, 59, 211);
+}
+
+.uk-button{
+    background-color: rgb(211, 59, 211);
+}
+
+.uk-button:hover{
+    background-color: rgb(126, 18, 126);
+}
+
+.uk-icon:hover{
+    color: rgb(126, 18, 126);
+}

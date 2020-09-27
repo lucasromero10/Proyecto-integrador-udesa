@@ -1,13 +1,16 @@
 .grid-item {
-    border: 1px solid purple;
-    padding: 20px;
-    font-size: 30px;
+    font-family: montserrat;
+    font-size: 25px;
     text-align: center;
-    color: black;
-   
+    color: violet;
+
   }
 
-  .lista{
+  .grid-item:hover{
+    background-color: rgb(143, 15, 143);
+    color: black;
+             } 
+  /* .lista{
 
     list-style-type: none;
     padding-right: 5px;
@@ -18,12 +21,5 @@
         color: black;
         text-align: center;
         }
-.grid-item:hover{
- border: 1px solid purple;
- background-color: rgb(95, 88, 88);
-            padding: 20px;
-            font-size: 30px;
-            text-align: center;
-            color: black;
-           
-          }
+*/
+
