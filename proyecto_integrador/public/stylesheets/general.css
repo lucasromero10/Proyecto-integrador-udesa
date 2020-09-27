@@ -65,3 +65,19 @@ a{
 .uk-icon:hover{
     color: rgb(126, 18, 126);
 }
+
+a h4{
+    font-family: 'Nunito', sans-serif;
+}
+
+p{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+li{
+    font-family: 'Poppins', sans-serif;
+}
+
+h1{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
