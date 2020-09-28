@@ -15,9 +15,7 @@ let homeController = {
     },
     detalleUsuario: function (req,res){
      res.render('detalleUsuario', { title: 'detalleUsuario' });
-          
-
     }
-}
+};
 
 module.exports = homeController;
