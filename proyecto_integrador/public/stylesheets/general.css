@@ -88,6 +88,11 @@ h1{
     font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
+.centro{
+    margin-top: 1.5%;
+    text-align: center;
+}
+
 img.foto-perfil{
     width: 150px;
 }
@@ -100,4 +105,10 @@ img.foto-home{
     width: 500px;
 }
 
+img.foto-detalle{
+    width: 30px;
+}
 
+a:hover{
+    color: indigo;
+}

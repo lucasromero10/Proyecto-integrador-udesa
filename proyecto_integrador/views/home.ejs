@@ -3,7 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="/stylesheets/home.css">
-    <%- include("headGeneral") %> 
+    <%- include("./partials/headGeneral") %> 
     
 <!-- 
 font-family: 'Nunito', sans-serif;
@@ -15,9 +15,9 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
 
 <body>
     <%- //if usuarioLogueado%>
-    <%- //include("headerLogueado") %> 
+    <%- //include("./partials/headerLogueado") %> 
     <% //If usuarioDeslogueado %>
-    <%- include("headerDeslogueado")%>  
+    <%- include("./partials/headerDeslogueado")%>  
 
     <main>
         <div class="uk-section uk-section-small">
@@ -30,7 +30,7 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
                     <article class="post uk-card-default uk-flex uk-flex-column">
                         <div class="info-usuario uk-flex ">
                             <div> <a href="http://localhost:3000/home/detalleUsuario/1">
-                                <img src="https://images.pexels.com/photos/1003869/pexels-photo-1003869.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" class="foto-perfil-home"> </a>
+                                <img src="https://www.diarioshow.com/__export/1549028576032/sites/cronica/img/2019/02/01/_fiesta_lanzamiento_fotos_antonella_roccuzzo_x_leo_messi_xbx_1_crop1549028367635.jpg_792575817.jpg" alt="" class="foto-perfil-home"> </a>
                             </div>
                             <a href="http://localhost:3000/home/detalleUsuario/1"> <h4 > Lionel Messi</h4> </a>
                         </div>
@@ -46,7 +46,7 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
                             </ul>
                             <div class="post-pie uk-flex">
                                 <a href="http://localhost:3000/home/detalleUsuario/1"> <h5> Lionel Messi</h5> </a>
-                                <p class="uk-width-5-6">Pie de foto <%- i %> </p>
+                                <p class="uk-width-5-6">Pie de foto <%= i %> </p>
                             </div>
                         </div>
                         <div class="post-comentarios">
@@ -64,170 +64,13 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
                             </ul>
                         </div>
                     </article>
-                    <% } %>
-                    <!-- <article class="post uk-card-default uk-flex uk-flex-column">
-                        <div class="info-usuario uk-flex ">
-                            <div> <a href="http://localhost:3000/home/detalleUsuario/1">
-                                <img src="https://via.placeholder.com/40" alt=""> </a>
-                            </div>
-                            <a href="http://localhost:3000/home/detalleUsuario/1"> <h4>Lionel Messi </h4> </a>
-                       
-                        </div>
-                        <div  class="post-body uk-flex uk-flex-center">
-                            <img src="https://via.placeholder.com/500x600" alt="">
-                        </div>
-                        <div class="post-reacciones">
-                            <ul class="post-icons uk-flex uk-flex-between">
-                                <li><span class="" uk-icon="icon:heart; ratio: 1.3"></span>
-                                </li>
-                                <li><span class="" uk-icon="icon:comments; ratio: 1.3"></span>
-                                </li>
-                            </ul>
-                            <div class="post-pie uk-flex">
-                                <h5 class="uk-width-1-6">Lionel Messi</h5>
-                                <p class="uk-width-5-6">Ibiza 2019</p>
-                            </div>
-                        </div>
-                        <div class="post-comentarios">
-                            <h6>Comentarios</h6>
-                            <ul>
-                                <li>
-                                    <a href="http://localhost:3000/home/detalleUsuario/1">Iniesta</a>
-                                    <p>Tranquila la joda ahi!</p>
-                                </li>
-                                <li>
-                                    <a href="http://localhost:3000/home/detalleUsuario/1">Xavi</a>
-                                    <p>Que lindo Ibiza!</p>
-                                </li>
-                                <a href="http://localhost:3000/home/detallePost/1">Ver más...</a>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="post uk-card-default uk-flex uk-flex-column">
-                        <div class="info-usuario uk-flex ">
-                            <div> <a href="http://localhost:3000/home/detalleUsuario/1">
-                                <img src="https://via.placeholder.com/40" alt=""> </a>
-                            </div>
-                            <a href="http://localhost:3000/home/detalleUsuario/1"> <h4> Lionel Messi</h4> </a>
-                       
-                        </div>
-                        <div  class="post-body uk-flex uk-flex-center">
-                            <img src="https://via.placeholder.com/500x600" alt="">
-                        </div>
-                        <div class="post-reacciones">
-                            <ul class="post-icons uk-flex uk-flex-between">
-                                <li><span class="" uk-icon="icon:heart; ratio: 1.3"></span>
-                                </li>
-                                <li><span class="" uk-icon="icon:comments; ratio: 1.3"></span>
-                                </li>
-                            </ul>
-                            <div class="post-pie uk-flex">
-                                <h5 class="uk-width-1-6">Lionel Messi</h5>
-                                <p class="uk-width-5-6">Aprendiendo de pibes</p>
-                            </div>
-                        </div>
-                        <div class="post-comentarios">
-                            <h6>Comentarios</h6>
-                            <ul>
-                                <li>
-                                    <a href="http://localhost:3000/home/detalleUsuario/1">Neymar</a>
-                                    <p>Que grandes que estan los pibes</p>
-                                </li>
-                                <li>
-                                    <a href="http://localhost:3000/home/detalleUsuario/1">Cristiano Ronaldo</a>
-                                    <p>Juntemos a los pibinhos</p>
-                                </li>
-                                <a href="http://localhost:3000/home/detallePost/1">Ver más...</a>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="post uk-card-default uk-flex uk-flex-column">
-                        <div class="info-usuario uk-flex ">
-                            <div> <a href="http://localhost:3000/home/detalleUsuario/1">
-                                <img src="https://via.placeholder.com/40" alt=""> </a>
-                            </div>
-                            <a href="http://localhost:3000/home/detalleUsuario/1"> <h4> Lionel Messi</h4> </a>
-                       
-                        </div>
-                        <div  class="post-body uk-flex uk-flex-center">
-                            <img src="https://via.placeholder.com/500x600" alt="">
-                        </div>
-                        <div class="post-reacciones">
-                            <ul class="post-icons uk-flex uk-flex-between">
-                                <li><span class="" uk-icon="icon:heart; ratio: 1.3"></span>
-                                </li>
-                                <li><span class="" uk-icon="icon:comments; ratio: 1.3"></span>
-                                </li>
-                            </ul>
-                            <div class="post-pie uk-flex">
-                                <h5 class="uk-width-1-6">Lionel Messi</h5>
-                                <p class="uk-width-5-6">Entrenando para comerme el mundo</p>
-                            </div>
-                        </div>
-                        <div class="post-comentarios">
-                            <h6>Comentarios</h6>
-                            <ul>
-                                <li>
-                                    <a href="http://localhost:3000/home/detalleUsuario/1">Thierry Henry</a>
-                                    <p>G.O.A.T</p>
-                                </li>
-                                <li>
-                                    <a href="http://localhost:3000/home/detalleUsuario/1">Angel Di Maria</a>
-                                    <p>Bien de patas pibe</p>
-                                </li>
-                                <a href="http://localhost:3000/home/detallePost/1">Ver más...</a>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="post uk-card-default uk-flex uk-flex-column">
-                        <div class="info-usuario uk-flex ">
-                            <div> <a href="http://localhost:3000/home/detalleUsuario/1">
-                                <img src="https://via.placeholder.com/40" alt=""> </a>
-                            </div>
-                            <a href="http://localhost:3000/home/detalleUsuario/1"> <h4> Lionel Messi</h4> </a>
-                       
-                        </div>
-                        <div  class="post-body uk-flex uk-flex-center">
-                            <img src="https://via.placeholder.com/500x600" alt="">
-                        </div>
-                        <div class="post-reacciones">
-                            <ul class="post-icons uk-flex uk-flex-between">
-                                <li><span class="" uk-icon="icon:heart; ratio: 1.3"></span>
-                                </li>
-                                <li><span class="" uk-icon="icon:comments; ratio: 1.3"></span>
-                                </li>
-                            </ul>
-                            <div class="post-pie uk-flex">
-                                <h5 class="uk-width-1-6">Lionel Messi</h5>
-                                <p class="uk-width-5-6">Asado de Domingo</p>
-                            </div>
-                        </div>
-                        <div class="post-comentarios">
-                            <h6>Comentarios</h6>
-                            <ul>
-                                <li>
-                                    <a href="http://localhost:3000/home/detalleUsuario/1">Kun Aguero</a>
-                                    <p>Facha Lio</p>
-                                </li>
-                                <li>
-                                    <a href="http://localhost:3000/home/detalleUsuario/1">Luis Suarez</a>
-                                    <p>Linda pa</p>
-                                </li>
-                                <a href="http://localhost:3000/home/detallePost/1">Ver más...</a>
-                            </ul>
-                        </div>
-                    </article> -->
-        
+                    <% } %>        
                 </section>
-
             </div>
         </div>
-    </main>
-
-   
-
+    </main>  
 </body>
 <footer>
-    <%- include("footer") %> 
+    <%- include('./partials/footer') %> 
 </footer>
 </html>

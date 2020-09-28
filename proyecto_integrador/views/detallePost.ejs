@@ -4,34 +4,34 @@
 <!--Agarrar lo que se repite y crear un archivo unico ejs, la navbar por ejemplo -->
 <head>
     <link rel="stylesheet" href="/stylesheets/detallePost.css">
-    <%- include("headGeneral") %> 
+    <%- include("./partials/headGeneral") %> 
 </head>
 
 <body>
     <%- //if usuarioLogueado%>
-    <%- include("headerLogueado") %> 
+    <%- include("./partials/headerLogueado") %> 
     <% //If usuarioDeslogueado %>
-    <% //include("headerDeslogueado")%>  
+    <% //include("./partials/headerDeslogueado")%>  
 
     <main>
         <div class="uk-section uk-section-xsmall">
             <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
                 <section class="uk-flex uk-width-2-3 detalle-container">
                     <article class="uk-width-2-3 uk-flex uk-flex-center uk-flex-middle detalle-post">
-                        <img src="https://via.placeholder.com/500x600" alt="Imagen del post" class="imagen-post ">
+                        <img src="https://i.pinimg.com/originals/c0/42/65/c04265a64f76d11c12c7d9a38c6d20ab.jpg" alt="Imagen del post" class="imagen-post foto-home">
                     </article>
                     <article class="uk-width-1-3 uk-flex uk-flex-column comentarios-detalle">
                         <div class="info-post uk-flex uk-flex-middle"><a href="http://localhost:3000/home/detalleUsuario/1">
-                            <img src="https://via.placeholder.com/35" alt="Foto del usuario"></a>
+                            <img src="https://pbs.twimg.com/media/ELV7-UgW4AEq4Gb.jpg" alt="Foto del usuario" class="foto-perfil-home"></a>
                            <a href="http://localhost:3000/home/detalleUsuario/1"> <h3>Lionel Messi</h3></a>
                         </div>
                         <div class="lista-comentarios" >
                             <% for( let i = 0; i < 13; i++ ) { %>
                                 <div class="comentario uk-flex uk-flex-middle uk-margin-small-top">
                                     <div class="uk-width-1-4 uk-flex uk-flex-center">
-                                        <img src="https://via.placeholder.com/35" alt="Foto de usuario">
+                                        <img src="https://www.diarioshow.com/__export/1549028576032/sites/cronica/img/2019/02/01/_fiesta_lanzamiento_fotos_antonella_roccuzzo_x_leo_messi_xbx_1_crop1549028367635.jpg_792575817.jpg" alt="Foto de usuario" class="foto-detalle">
                                     </div>
-                                    <h6 class="uk-margin-remove uk-width-2-4"><a href="http://localhost:3000/home/detalleUsuario/1">Comentario <%-  i %> </a> Lo que comento el comentario <%- i %> </h6>
+                                    <h6 class="uk-margin-remove uk-width-2-4"><a href="http://localhost:3000/home/detalleUsuario/1">Comentario <%=  i %> </a> Lo que comento el comentario <%- i %> </h6>
                                     <a href="" uk-icon="icon:heart; ratio: 0.8" class="uk-width-1-4 uk-text-right icono-meGusta"></a>
                                 </div>
                             <% } %>
@@ -53,7 +53,7 @@
 
 </body>
 <footer>
-    <%- include("footer") %> 
+    <%- include("./partials/footer") %> 
 </footer>
 
 </html>

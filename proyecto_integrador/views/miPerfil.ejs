@@ -3,21 +3,21 @@
 
 <head>
     <link rel="stylesheet" href="/stylesheets/miPerfil.css">
-    <%- include("headGeneral") %> 
+    <%- include("./partials/headGeneral") %> 
 </head>
 
 <body>
     <%- //if usuarioLogueado%>
-    <%- include("headerLogueado") %> 
+    <%- include("./partials/headerLogueado") %> 
     <%- //If usuarioDeslogueado %>
-    <%- //include("headerDeslogueado")%>  
+    <%- //include("./partials/headerDeslogueado")%>  
 
     <main>
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-small">
                 <section class="info-usuario uk-flex uk-flex-around uk-width-1-1">
                     <div class="uk-width-1-3 uk-flex uk-flex-center uk-flex-middle">
-                        <img src="https://images.pexels.com/photos/1003869/pexels-photo-1003869.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="foto de perfil" class="foto-perfil">
+                        <img src="https://www.diarioshow.com/__export/1549028576032/sites/cronica/img/2019/02/01/_fiesta_lanzamiento_fotos_antonella_roccuzzo_x_leo_messi_xbx_1_crop1549028367635.jpg_792575817.jpg" alt="foto de perfil" class="foto-perfil">
                     </div>
                     <div class="uk-width-2-3 uk-flex uk-flex-column uk-flex-around">
                         <div class="uk-flex uk-flex-middle">
@@ -95,6 +95,6 @@
 
 </body>
 <footer>
-    <%- include("footer") %> 
+    <%- include("./partials/footer") %> 
 </footer>
 </html>

@@ -3,23 +3,23 @@
 
 <head>
     <link rel="stylesheet" href="/stylesheets/resultadoBusqueda.css">
-    <%- include("headGeneral") %> 
+    <%- include("./partials/headGeneral") %> 
 
 </head>
 
 <body>
-    <%- include("headerLogueado") %> 
+    <%- include("./partials/headerLogueado") %> 
    
 
     <main>
 
-
-    <h1 class="h1"> Resultados de búsqueda</h1>
-
+<div class="centro">
+    <h1 class="h1-centro"> Resultados de búsqueda</h1>
+</div>
     <ul class="uk-list uk-list-striped lista">
-        <h3>Usuarios Encontrados</h3>
+        <h3>Usuarios Encontrados:</h3>
             <% for( let i = 0; i < 20; i++ ) { %>
-                <li><a href="http://localhost:3000/home/detalleUsuario/1"style="text-decoration: none"><div class="grid-item">Resultado de la busqueda <%- i %> </div> </a></li>
+                <li><a href="http://localhost:3000/home/detalleUsuario/1"style="text-decoration: none"><div class="grid-item">Resultado de la busqueda <%= i %> </div> </a></li>
             <% } %>
             
             
@@ -32,6 +32,6 @@
 
 </body>
 <footer>
-    <%- include("footer") %> 
+    <%- include("./partials/footer") %> 
 </footer>
 </html>
