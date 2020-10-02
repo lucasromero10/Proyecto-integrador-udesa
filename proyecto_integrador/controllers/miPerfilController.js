@@ -1,3 +1,6 @@
+let db = require('../database/models');
+let sequelize = db.sequelize;
+
 let miPerfilController = {
     miPerfil: function(req, res) {
         res.render('miPerfil', { title: 'miPerfil' })

@@ -1,3 +1,7 @@
+let db = require('../database/models');
+let sequelize = db.sequelize;
+
+
 let homeController = {
 
     home: function(req, res) {
