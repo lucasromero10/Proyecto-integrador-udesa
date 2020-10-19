@@ -4,13 +4,11 @@ let op = db.Sequelize.Op;
 
 let homeController = {
 
-    home: function(req, res) {
-        //res.render('home', { title: 'home' })
+    home: function(req, res) {  
         db.Post.findAll(
             {
-                order: ["fechaDePosteo"]
-            }
-        ).then(function(posts) {
+                order:["fechaDePosteo"]
+            }).then(function(posts) {
             res.render("home", {posts: posts});
         }).catch(error =>{
             console.log(error);
@@ -23,9 +21,9 @@ let homeController = {
      res.render('detallePost',{title:'detallePost' })   
     },
     resultadoBusqueda: function (req, res) {
-    // res.render('resultadoBusqueda',{title: 'resultadoBusqueda'}) 
+        
         let queBuscoElUsuario = req.query.buscador;
-        //return res.send(queBuscoElUsuario)
+        
         db.Usuario.findAll(
             {
                 where: [

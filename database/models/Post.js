@@ -1,15 +1,13 @@
-const { FOREIGNKEYS } = require("sequelize/types/lib/query-types");
-
 module.exports = (sequelize, DataTypes) => {
 
     let cols = {
-        idPost:{
+        idposts:{
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true
         },
         idUsuario:{
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
         },
         urlimagen:{
             type: DataTypes.STRING

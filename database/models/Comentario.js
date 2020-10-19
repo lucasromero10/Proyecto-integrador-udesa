@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
 
     let cols = {
-        idComentario:{
+        idcomentarios:{
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true
@@ -12,10 +12,10 @@ module.exports = (sequelize, DataTypes) => {
         fechaDeComentario:{
             type: DataTypes.DATE
         },
-        idPost:{
+        idpost:{
             type: DataTypes.INTEGER
         },
-        idUsuario:{
+        idusuario:{
             type: DataTypes.INTEGER
         }
     }
@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false
     }
 
-    let Comentario = sequelize.define("Comentarios", cols, config);
+    let Comentario = sequelize.define("Comentario", cols, config);
 
     return Comentario;
 }
