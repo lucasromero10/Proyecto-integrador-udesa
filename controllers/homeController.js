@@ -5,8 +5,16 @@ let op = db.Sequelize.Op;
 let homeController = {
 
     home: function(req, res) {
-        res.render('home', { title: 'home' })
-      
+        //res.render('home', { title: 'home' })
+        db.Post.findAll(
+            {
+                order: ["fechaDePosteo"]
+            }
+        ).then(function(posts) {
+            res.render("home", {posts: posts});
+        }).catch(error =>{
+            console.log(error);
+        })
     },
     agregarPost: function (req, res) {
         res.render('agregarPost', {title: 'agregarPost'})

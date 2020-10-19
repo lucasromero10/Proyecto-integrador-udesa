@@ -1,3 +1,5 @@
+const { FOREIGNKEYS } = require("sequelize/types/lib/query-types");
+
 module.exports = (sequelize, DataTypes) => {
 
     let cols = {
