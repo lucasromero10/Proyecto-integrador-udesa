@@ -9,9 +9,6 @@ module.exports = (sequelize, DataTypes) => {
         nombre:{
             type: DataTypes.STRING
         },
-        fechaDeNacimiento:{
-            type: DataTypes.DATE
-        },
         edad:{
             type: DataTypes.INTEGER
         }
@@ -23,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false
     }
 
-    let Usuario = sequelize.define("Usuarios", cols, config);
+    let Usuario = sequelize.define("Usuario", cols, config);
 
     return Usuario;
 }

@@ -17,10 +17,14 @@
     <h1 class="h1-centro"> Resultados de búsqueda</h1>
 </div>
     <ul class="uk-list uk-list-striped lista">
-        <h3>Usuarios Encontrados:</h3>
-            <% for( let i = 0; i < 20; i++ ) { %>
-                <li><a href="http://localhost:3000/home/detalleUsuario/1"style="text-decoration: none"><div class="grid-item">Resultado de la busqueda <%= i %> </div> </a></li>
-            <% } %>
+       
+            <%if (usuarios.length == 0) { %>
+                <h3>No se encontraron usuarios: <%=queBuscoElUsuario%></h3>
+            <%}else{%>
+                <h3>Usuarios Encontrados:</h3>
+            <% for( let i = 0; i < usuarios.length; i++ ) { %>
+                <li><a href="http://localhost:3000/home/detalleUsuario/<%= usuarios[i].idUsuarios %>"style="text-decoration: none"><div class="grid-item"><%= usuarios[i].nombre %></div> </a></li>
+            <% }} %>
             
             
     </ul>
