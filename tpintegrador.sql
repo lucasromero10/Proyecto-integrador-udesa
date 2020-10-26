@@ -89,6 +89,7 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(45) NOT NULL,
   `fechaDeNacimiento` datetime DEFAULT NULL,
   `edad` int(11) DEFAULT NULL,
+  `contrasenia` varchar(45) NOT NULL,
   PRIMARY KEY (`idUsuarios`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -99,7 +100,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Tony Montana','1957-05-19 00:00:00',63),(2,'Vito Corleone','1933-09-01 00:00:00',87),(3,'Michael Corleone','1960-07-10 00:00:00',59),(4,'Jhon Gotti','1940-10-27 00:00:00',79),(5,'Michael Franzese','1951-05-27 00:00:00',69);
+INSERT INTO `usuarios` VALUES (1,'Tony Montana','1957-05-19 00:00:00',63,'tonymontana'),(2,'Vito Corleone','1933-09-01 00:00:00',87,'vitocorleonw'),(3,'Michael Corleone','1960-07-10 00:00:00',59,'michaelcorleone'),(4,'Jhon Gotti','1940-10-27 00:00:00',79,'jhongotti'),(5,'Michael Franzese','1951-05-27 00:00:00',69,'michaelfranzese');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -112,4 +113,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-10-23 18:22:59
+-- Dump completed on 2020-10-26 13:26:08
