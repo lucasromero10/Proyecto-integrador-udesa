@@ -24,7 +24,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({ secret: "Cualquiercosa!!!" }));
+app.use(function(req, res, next) {
 
+  res.locals = {
+    usuarioLogueado: req.session.usuarioLogueado
+  }
+
+  next();
+})
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
