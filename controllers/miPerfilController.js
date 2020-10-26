@@ -22,14 +22,14 @@ let miPerfilController = {
           res.redirect("/home");
       }
 
-      let name = req.body.name;
-      let password = bcrypt.hashSync(req.body.password, 10);
-      let email = req.body.email;
+      let nombre = req.body.nombre;
+      let contrasenia = bcrypt.hashSync(req.body.contrasenia, 10);
+      let edad = req.body.edad;
 
       let user = {
-          name: name,
-          password: password,
-          email: email
+          nombre: name,
+          contrasenia: contrasenia,
+          edad: edad
       }
 
       db.User.create(user)
