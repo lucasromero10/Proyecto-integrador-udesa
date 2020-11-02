@@ -37,11 +37,18 @@ let homeController = {
         }).catch(error =>{
             console.log(error);
         })
-     
-    },
+     },
+
     detalleUsuario: function (req,res){
-     res.render('detalleUsuario', { title: 'detalleUsuario' });
+        let idUsusarios = req.params.id
+        db.Usuario.findByPk(idUsusarios)
+        .then(function(elUsuario) {
+        res.render('detalleUsuario', {elUsuario: elUsuario});
+        }).catch(error =>{
+        console.log(error);
+        })
     }
-};
+
+}
 
 module.exports = homeController;
