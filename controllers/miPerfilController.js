@@ -25,15 +25,15 @@ let miPerfilController = {
 
       let nombre = req.body.nombre;
       let contrasenia = bcrypt.hashSync(req.body.contrasenia, 10);
-      let edad = req.body.edad;
+      let email = req.body.email;
 
       let user = {
-          nombre: name,
+          nombre: nombre,
           contrasenia: contrasenia,
-          edad: edad
+          email: email
       }
 
-      db.User.create(user)
+      db.Usuario.create(user)
       .then(function() {
           res.redirect("/home");
       })
@@ -62,7 +62,7 @@ let miPerfilController = {
 
           // findAll retorna SIEMPRE un array. Si no matchean los datos findAll traer un array vacío pero SIEMPRE trae un array
           // findOne en cambio tiene dos opciones. O trae el dato, o trae null.
-          db.User.findOne(
+          db.Usuario.findOne(
               {
                   where: [
                       { email: req.body.email },
@@ -72,7 +72,7 @@ let miPerfilController = {
           .then(function(usuario) {
               if (usuario == null) {
                   res.send("El mail no existe")
-              } else if (bcrypt.compareSync(req.body.password, usuario.password) == false) {
+              } else if (bcrypt.compareSync(req.body.contrasenia, usuario.contrasenia) == false) {
                   res.send("Mala contraseña")
               } else {
                   req.session.usuarioLogueado = usuario;
