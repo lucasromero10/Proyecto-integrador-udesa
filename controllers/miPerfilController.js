@@ -1,6 +1,7 @@
 let db = require('../database/models');
 let sequelize = db.sequelize;
 let bcrypt = require("bcryptjs");
+const { Op } = require("sequelize");
 
 
 
@@ -40,6 +41,9 @@ let miPerfilController = {
     login: function(req, res) {
       if (req.session.usuarioLogueado != undefined) {
           res.redirect("/home");
+          //Post.findAll({
+            //where: {
+         //[Op.or]: [{ a: 5 }, { b: 6 }]
       }
 
       res.render("login");
