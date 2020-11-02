@@ -41,10 +41,12 @@ let homeController = {
 
     detalleUsuario: function (req,res){
         let idUsusarios = req.params.id
+
         db.Usuario.findByPk(idUsusarios)
         .then(function(elUsuario) {
         res.render('detalleUsuario', {elUsuario: elUsuario});
-        }).catch(error =>{
+        })
+        .catch(error =>{
         console.log(error);
         })
     }
