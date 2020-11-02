@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `tpintegrador` /*!40100 DEFAULT CHARACTER SET utf
 USE `tpintegrador`;
 -- MySQL dump 10.13  Distrib 8.0.21, for macos10.15 (x86_64)
 --
--- Host: localhost    Database: tpintegrador
+-- Host: 127.0.0.1    Database: tpintegrador
 -- ------------------------------------------------------
 -- Server version	5.7.26
 
@@ -32,9 +32,7 @@ CREATE TABLE `comentarios` (
   `idusuario` int(11) DEFAULT NULL,
   PRIMARY KEY (`idcomentarios`),
   KEY `idpost_idx` (`idpost`),
-  KEY `idusuario_idx` (`idusuario`),
-  CONSTRAINT `idpost` FOREIGN KEY (`idpost`) REFERENCES `posts` (`idposts`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `idusuario` FOREIGN KEY (`idusuario`) REFERENCES `usuarios` (`idUsuarios`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `idpost` FOREIGN KEY (`idpost`) REFERENCES `posts` (`idposts`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=201 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -61,9 +59,7 @@ CREATE TABLE `posts` (
   `urlimagen` varchar(20000) NOT NULL,
   `pieDeFoto` varchar(45) DEFAULT NULL,
   `fechaDePosteo` datetime DEFAULT NULL,
-  PRIMARY KEY (`idposts`),
-  KEY `idusuario_idx` (`idUsuario`),
-  CONSTRAINT `idusuario2` FOREIGN KEY (`idUsuario`) REFERENCES `usuarios` (`idUsuarios`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  PRIMARY KEY (`idposts`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -85,15 +81,15 @@ DROP TABLE IF EXISTS `usuarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `usuarios` (
-  `idUsuarios` int(11) NOT NULL,
+  `idUsuarios` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
   `fechaDeNacimiento` datetime DEFAULT NULL,
   `edad` int(11) DEFAULT NULL,
-  `contrasenia` varchar(45) NOT NULL,
+  `contrasenia` varchar(255) NOT NULL,
   `email` varchar(45) DEFAULT NULL,
   `fotoPerfil` varchar(20000) DEFAULT NULL,
   PRIMARY KEY (`idUsuarios`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -102,7 +98,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Tony Montana','1957-05-19 00:00:00',63,'tonymontana','tonymontana@gmail.com','https://upload.wikimedia.org/wikipedia/en/1/19/Tony_Montana_in_Scarface_%281983%29%2C_portrayed_by_Al_Pacino.jpg'),(2,'Vito Corleone','1933-09-01 00:00:00',87,'vitocorleone','vitocorleone@gmail.com','https://www.opusvida.com/wp-content/uploads/2010/05/vito_corleone_11.jpg'),(3,'Michael Corleone','1960-07-10 00:00:00',59,'michaelcorleone','michaelcorleone@gmail.com','https://static.wikia.nocookie.net/godfather/images/a/aa/Michael_Corleone_Part_I.jpg/revision/latest/top-crop/width/360/height/450?cb=20190828200514'),(4,'Jhon Gotti','1940-10-27 00:00:00',79,'jhongotti','jhongotti@gmail.com','https://pbs.twimg.com/profile_images/628863908644696064/Ud4JwGF6.jpg'),(5,'Michael Franzese','1951-05-27 00:00:00',69,'michaelfranzese','michaelfranzese@gmail.com','https://static.wikia.nocookie.net/mafia/images/3/37/Michael_Franzese.jpg/revision/latest/scale-to-width-down/340?cb=20120925182959');
+INSERT INTO `usuarios` VALUES (1,'Tony Montana','1957-05-19 00:00:00',63,'tonymontana','tonymontana@gmail.com','https://upload.wikimedia.org/wikipedia/en/1/19/Tony_Montana_in_Scarface_%281983%29%2C_portrayed_by_Al_Pacino.jpg'),(2,'Vito Corleone','1933-09-01 00:00:00',87,'vitocorleone','vitocorleone@gmail.com','https://www.opusvida.com/wp-content/uploads/2010/05/vito_corleone_11.jpg'),(3,'Michael Corleone','1960-07-10 00:00:00',59,'michaelcorleone','michaelcorleone@gmail.com','https://static.wikia.nocookie.net/godfather/images/a/aa/Michael_Corleone_Part_I.jpg/revision/latest/top-crop/width/360/height/450?cb=20190828200514'),(4,'Jhon Gotti','1940-10-27 00:00:00',79,'jhongotti','jhongotti@gmail.com','https://pbs.twimg.com/profile_images/628863908644696064/Ud4JwGF6.jpg'),(5,'Michael Franzese','1951-05-27 00:00:00',69,'michaelfranzese','michaelfranzese@gmail.com','https://static.wikia.nocookie.net/mafia/images/3/37/Michael_Franzese.jpg/revision/latest/scale-to-width-down/340?cb=20120925182959'),(6,'Lucas ',NULL,NULL,'$2a$10$k/DbRbcQUxI7Emj2uyZJAuWMhJRvj4fqkEW8dZrUWHjfd3g6xQaj6','lucasromerop99@gmail.com',NULL);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -115,4 +111,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-02 11:43:07
+-- Dump completed on 2020-11-02 13:39:51
