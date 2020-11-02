@@ -3,7 +3,7 @@ const { response } = require('../app');
 var router = express.Router();
 const miPerfilController = require("../controllers/miPerfilController")
 /* GET miperfil page. */
-router.get("/registracion", miPerfilController.regsitracion);
+router.get("/registracion", miPerfilController.registracion);
 
 router.post("/registracion", miPerfilController.storeUser);
 

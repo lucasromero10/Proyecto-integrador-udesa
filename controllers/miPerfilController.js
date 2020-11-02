@@ -11,7 +11,7 @@ let miPerfilController = {
       },
 
     
-    regsitracion: function (req, res) {
+    registracion: function (req, res) {
       if (req.session.usuarioLogueado != undefined) {
         res.redirect("/home");
     }
