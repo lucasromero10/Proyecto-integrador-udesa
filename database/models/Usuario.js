@@ -14,6 +14,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         contrasenia:{
             type: DataTypes.STRING
+        },
+        email:{
+            type:DataTypes.STRING
         }
     }
 
