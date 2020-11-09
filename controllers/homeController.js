@@ -37,7 +37,7 @@ let homeController = {
 
         res.redirect("/home")
         } else {
-            res.redirect("/post/detalle/" + req.body.idPost)
+            res.redirect("/home/detallePost/" + req.body.idPost)
         }        
     },
     //Editar Post
