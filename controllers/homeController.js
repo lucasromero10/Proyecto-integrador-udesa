@@ -54,7 +54,7 @@ let homeController = {
 // agregar nuevo post a la base de datos
     nuevoPost: function (req, res) {
 
-        if (req.session.usuarioLog != undefined) {
+        if (req.session.usuarioLogueado != undefined) {
             let nuevoPost = {
                 idUsuario: req.session.usuarioLog.id,
                 urlimagen: req.body.urlimagen,
