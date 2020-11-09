@@ -14,12 +14,63 @@ let homeController = {
             console.log(error);
         })
     },
+    // Seccion Post
+    //Agregar  post vista
     agregarPost: function (req, res) {
         res.render('agregarPost', {title: 'agregarPost'})
     },
+    // Detalle Post, hacer relaciones!
     detallePost: function (req, res) {
      res.render('detallePost',{title:'detallePost' })   
     },
+    //Borrar Post
+    borrar: function(req, res){
+
+        if (req.session.usuarioLogueado == req.body.idUsuario) {
+            var idPostBorrar = req.body.idPost;
+
+        db.Post.destroy({
+            where: {
+                id: idPostBorrar
+            }
+        })
+
+        res.redirect("/home")
+        } else {
+            res.redirect("/post/detalle/" + req.body.idPost)
+        }        
+    },
+    //Editar Post
+    editar: function(req, res){
+
+        let idPostEditar = req.params.id;
+
+        db.Post.findByPk(idPostEditar)
+
+        .then(function(post){
+            res.render("editarPost", {post: post})
+        })
+    },
+// agregar nuevo post a la base de datos
+    nuevoPost: function (req, res) {
+
+        if (req.session.usuarioLog != undefined) {
+            let nuevoPost = {
+                idUsuario: req.session.usuarioLog.id,
+                urlimagen: req.body.urlimagen,
+                pieDeFoto: req.body.texto,
+            };      
+    
+            db.Post.create(nuevoPost)
+    
+            .then(function(){
+                res.redirect("/home");
+            })
+        } else {
+            res.redirect("/miPerfil/registracion")
+        }        
+    },
+
     resultadoBusqueda: function (req, res) {
         
         let queBuscoElUsuario = req.query.buscador;
