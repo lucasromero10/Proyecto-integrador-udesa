@@ -56,7 +56,7 @@ let homeController = {
 
         if (req.session.usuarioLogueado != undefined) {
             let nuevoPost = {
-                idUsuario: req.session.usuarioLog.id,
+                idUsuario: req.session.usuarioLogueado.id,
                 urlimagen: req.body.urlimagen,
                 pieDeFoto: req.body.texto,
             };      
