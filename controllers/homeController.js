@@ -7,12 +7,14 @@ let homeController = {
     home: function(req, res) {  
         db.Post.findAll(
             {
-                order:["fechaDePosteo"]
-            }).then(function(posts) {
+                order:[["fechaDePosteo","DESC"]]
+            })
+            .then(function(posts) {
             res.render("home", {posts: posts});
-        }).catch(error =>{
+            })
+            .catch(error =>{
             console.log(error);
-        })
+            })
     },
     // Seccion Post
     //Agregar  post vista
