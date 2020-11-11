@@ -16,7 +16,6 @@ router.get('/agregarPost',homeController.agregarPost);
 //Ruta detalle post
 //localhost:3000/home/detallePost/id=
 router.get('/detallePost/:id',homeController.detallePost);
-router.post("/", homeController.nuevoPost)
 
 //Ruta resultado busqueda
 //localhost:3000/home/resultadoBusqueda
