@@ -12,6 +12,7 @@ router.get('/detalleUsuario/:id',homeController.detalleUsuario);
 //ruta agregarpost
 //localhost:3000/home/agregarPost
 router.get('/agregarPost',homeController.agregarPost);
+router.post('/nuevoPost', homeController.nuevoPost)
 
 //Ruta detalle post
 //localhost:3000/home/detallePost/id=
