@@ -6,6 +6,10 @@ let homeController = {
 
     home: function(req, res) {  
         db.Post.findAll(
+            {include:[
+                {association: "postUsuario"},
+                {association: "comentario"}
+            ]}, 
             {
                 order:[["fechaDePosteo","DESC"]]
             })
@@ -23,7 +27,18 @@ let homeController = {
     },
     // Detalle Post, hacer relaciones!
     detallePost: function (req, res) {
-     res.render('detallePost',{title:'detallePost' })   
+
+        var id = req.params.id;
+
+        db.Post.findByPk(id,
+            {include:[
+                {association: "postUsuario"},
+                {association: "comentario"}
+            ]})
+            
+        .then(function(post){
+            res.render("detallePost", {title:'detallePost' })
+        })
     },
     //Borrar Post
     borrar: function(req, res){
