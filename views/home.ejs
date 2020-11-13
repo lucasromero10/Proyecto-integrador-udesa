@@ -32,7 +32,9 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
                             <div> <a href="http://localhost:3000/home/detalleUsuario/<%= posts[i].idUsuario %>">
                                 <img src="<%= posts[i].urlimagen %>" alt="" class="foto-perfil-home"> </a>
                             </div>
-                            <a href="http://localhost:3000/home/detalleUsuario/<%= posts[i].idUsuario %>"> <h4 >Usuario: <%= posts[i].idUsuario %></h4> </a>
+                            <a href="http://localhost:3000/home/detalleUsuario/<%= posts[i].idUsuario %>"> <h4>
+                                Usuario:<%=posts[i].idUsuario %>
+                            </h4></a>
                         </div>
                         <div  class="post-body uk-flex uk-flex-center">
                             <img src="<%= posts[i].urlimagen %>" alt="" class="foto-home">

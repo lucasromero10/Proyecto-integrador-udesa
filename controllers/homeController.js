@@ -110,7 +110,10 @@ let homeController = {
     detalleUsuario: function (req,res){
         let idUsusarios = req.params.id
 
-        db.Usuario.findByPk(idUsusarios)
+        db.Usuario.findByPk(idUsusarios,
+            {include:[
+                {association: "postUsuario"},
+            ]})
         .then(function(elUsuario) {
         res.render('detalleUsuario', {elUsuario: elUsuario});
         })
