@@ -1,3 +1,6 @@
+//<%= post[i].comentarios.idUsuario %>
+//<%= posts[i].postUsuario.nombre %>
+
 let db = require('../database/models/index');
 let op = db.Sequelize.Op;
 

@@ -14,10 +14,7 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
 </head>
 
 <body>
-    <%- //if usuarioLogueado%>
     <%- include("./partials/header") %> 
-    <% //If usuarioDeslogueado %>
-    <%- //include("./partials/header")%>  
 
     <main>
         <div class="uk-section uk-section-small">
@@ -33,7 +30,7 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
                                 <img src="<%= posts[i].urlimagen %>" alt="" class="foto-perfil-home"> </a>
                             </div>
                             <a href="http://localhost:3000/home/detalleUsuario/<%= posts[i].idUsuario %>"> <h4>
-                                Usuario:<%=posts[i].idUsuario %>
+                                <%=posts[i].postUsuario.nombre %>
                             </h4></a>
                         </div>
                         <div  class="post-body uk-flex uk-flex-center">
@@ -47,17 +44,18 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
                                 </li>
                             </ul>
                             <div class="post-pie uk-flex">
-                                <a href="http://localhost:3000/home/detalleUsuario/<%= posts[i].idUsuario %>"> <h5> Usuario: <%= posts[i].idUsuario %></h5> </a>
-                                <p class="uk-width-5-6"><%= posts[i].pieDeFoto %> </p>
+                                <a href="http://localhost:3000/home/detalleUsuario/<%= posts[i].idUsuario %>"> <h5> <%= posts[i].postUsuario.nombre %>: </h5> </a>
+                                <p class="">  <%= posts[i].pieDeFoto %> </p>
                             </div>
                         </div>
                         <div class="post-comentarios">
                             <h6>Comentarios</h6>
                             <ul>
-                                <% for( let i = 0; i < 1; i++ ) { %>
+                                <% for( let i = 0; i < posts[i].comentario.lenght; i++ ) { %>
                                     <li>
-                                        <a href="http://localhost:3000/home/detalleUsuario/1">Usuario:</a>
-                                        <p>Comentario</p>
+                                        <a href="http://localhost:3000/home/detalleUsuario/<%= posts[i].comentario.idusuario %>">
+                                            <p>Comentario: <%= posts[i].comentario.idusuario %></p>
+                                        </a>
                                     </li>
                                 <% } %>
                                 <a href="http://localhost:3000/home/detallePost/<%= posts[i].idposts %>">Ver más...</a>

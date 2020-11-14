@@ -99,8 +99,9 @@ img.foto-perfil{
 
 img.foto-perfil-home{
     width: 40px;
+    height: 40px;
+    border-radius: 50%;
 }
-
 img.foto-home{
     width: 500px;
 }
