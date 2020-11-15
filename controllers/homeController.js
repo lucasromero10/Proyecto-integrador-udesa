@@ -41,7 +41,7 @@ let homeController = {
             ]})
             
         .then(function(post){
-            res.render("detallePost", {title:'detallePost' })
+            res.render("detallePost", {post: post })
         })
     },
     //Borrar Post
