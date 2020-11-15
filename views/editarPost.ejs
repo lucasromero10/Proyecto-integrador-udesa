@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/stylesheets/agregarPost.css">
+    <%- include("./partials/headGeneral") %> 
+</head>
+
+<body>
+    
+    <%- include("./partials/header") %> 
+
+
+
+    <main>
+        <div class="uk-section uk-section-small">
+            <div class="uk-container uk-container-large uk-flex uk-flex-center">
+                <!-- <form action=""> -->
+
+                    <div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade uk-background-default" uk-height-viewport>
+                        <div class="uk-width-1-1">
+                            <div class="uk-container">
+                                <div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
+                                    <div class="uk-width-1-1@m">
+                                        <div class="uk-margin uk-width-large uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+                                            <h3 class="h3-general uk-card-title uk-text-center" style="font-family: 'Poppins' ,sans-serif;">Editar Posteo</h3>
+                                            <form action="/home/editarPost/actualizar" method="POST">
+                                                <div class="uk-margin">
+                                                    <div class="uk-inline uk-width-1-1">
+                                                        <span class="uk-form-icon" uk-icon="icon: camera"></span>
+                                                        <input name="urlimagen" class="uk-input uk-form-large" type="text" placeholder="Imagen" value=" <%post.urlimagen%> ">
+                                                    </div>
+                                                </div>
+                                                <div class="uk-margin">
+                                                    <div class="uk-inline uk-width-1-1">
+                                                        <span class="uk-form-icon" uk-icon="icon: comment"></span>
+                                                        <input name="texto" class="uk-input uk-form-large" type="text" value="<%post.pieDeFoto%>" placeholder="Editar pie de foto">	
+                                                    </div>
+                                                </div>
+                                                <div class="uk-margin">
+                                                    <button type="submit" class="uk-button uk-button-primary uk-button-large uk-width-1-1">Actualizar Post</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                <!-- </form> -->
+
+            </div>
+        </div>
+    </main>
+    
+  
+</body>
+
+<footer>
+    <%- include("./partials/footer") %> 
+</footer>
+</html>

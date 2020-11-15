@@ -14,6 +14,9 @@ router.get('/detalleUsuario/:id',homeController.detalleUsuario);
 router.get('/agregarPost',homeController.agregarPost);
 router.post('/nuevoPost', homeController.nuevoPost)
 
+router.get("/editarPost/:id", homeController.editar)
+router.post("/editarPost/:id/actualizar", homeController.actualizar)
+
 //Ruta detalle post
 //localhost:3000/home/detallePost/id=
 router.get('/detallePost/:id',homeController.detallePost);

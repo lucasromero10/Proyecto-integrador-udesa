@@ -91,6 +91,28 @@ let homeController = {
             res.redirect("/miPerfil/registracion")
         }        
     },
+    actualizar: function (req, res) {
+
+        if (req.session.usuarioLog != undefined) {
+            let postActualizado = {
+                idUsuario: req.session.usuarioLogueado,
+                urlimagen: req.body.urlimagen,
+                pieDeFoto: req.body.texto, 
+            };      
+    
+            db.Post.update(postActualizado, {
+                where: {
+                    id: req.body.idpost
+                }
+            })
+    
+            .then(function(){
+                res.redirect("/home");
+            })
+        } else {
+            res.render("/miPerfil/registracion")
+        }        
+    },
 
     resultadoBusqueda: function (req, res) {
         
