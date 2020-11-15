@@ -51,15 +51,15 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
                         <div class="post-comentarios">
                             <h6>Comentarios</h6>
                             <ul>
-                                <% for( let i = 0; i < posts[i].comentario.lenght; i++ ) { %>
+                                <% for( let i = 0; i < posts[i].comentario.length; i++ ) { %>
                                     <li>
-                                        <a href="http://localhost:3000/home/detalleUsuario/<%= posts[i].comentario.idusuario %>">
+                                        <a href="http://localhost:3000/home/detalleUsuario/<%= posts[i].comentario.idusuario%>">
                                             <p>Comentario: <%= posts[i].comentario.idusuario %></p>
                                         </a>
                                     </li>
                                 <% } %>
-                                <a href="http://localhost:3000/home/detallePost/<%= posts[i].idposts %>">Ver más...</a>
                             </ul>
+                            <a href="http://localhost:3000/home/detallePost/<%= posts[i].idposts %>">Ver más...</a>
                         </div>
                     </article>
                     <% } %>        
