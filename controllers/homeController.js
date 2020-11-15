@@ -95,7 +95,7 @@ let homeController = {
 
         if (req.session.usuarioLog != undefined) {
             let postActualizado = {
-                idUsuario: req.session.usuarioLogueado,
+                idUsuario: req.session.usuarioLogueado.id,
                 urlimagen: req.body.urlimagen,
                 pieDeFoto: req.body.texto, 
             };      
@@ -107,7 +107,7 @@ let homeController = {
             })
     
             .then(function(){
-                res.redirect("/home");
+                res.redirect("/home/detallePost/" + req.body.idPost);
             })
         } else {
             res.render("/miPerfil/registracion")
