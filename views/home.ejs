@@ -51,24 +51,24 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
                         <div class="post-comentarios">
                             <h6>Comentarios</h6>
                             <ul>
-                                <% for( let i = 0; i < posts[i].comentario.length; i++ ) { %>
+                                <% for( let index = 0; index < posts[i].comentario.length; index++ ) { %>
                                     <li>
-                                        <a href="http://localhost:3000/home/detalleUsuario/<%= posts[i].comentario.idusuario%>">
-                                            <p>Comentario: <%= posts[i].comentario.idusuario %></p>
-                                        </a>
+                                        <a href="http://localhost:3000/home/detalleUsuario/<%= posts[i].comentario[index].idusuario %>">Comentario:</a>
+                                            <p> <%= posts[i].comentario[index].comentario %></p>
+                                        
                                     </li>
                                 <% } %>
                             </ul>
                             <a href="http://localhost:3000/home/detallePost/<%= posts[i].idposts %>">Ver más...</a>
                         </div>
                     </article>
-                    <% } %>        
+                    <% } %>
                 </section>
             </div>
         </div>
-    </main>  
+    </main>
 </body>
 <footer>
-    <%- include('./partials/footer') %> 
+    <%- include('./partials/footer') %>
 </footer>
 </html>

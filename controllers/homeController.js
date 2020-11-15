@@ -14,9 +14,10 @@ let homeController = {
                 {association: "comentario"}
             ], 
             
-                order:[["fechaDePosteo","DESC"]]
+            //    order:[["fechaDePosteo","DESC"]]
             })
             .then(function(posts) {
+               // res.send(posts)
                 res.render("home", {posts: posts});
             })
             .catch(error =>{
