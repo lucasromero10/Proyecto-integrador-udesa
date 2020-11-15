@@ -12,12 +12,12 @@ let homeController = {
             {include:[
                 {association: "postUsuario"},
                 {association: "comentario"}
-            ]}, 
-            {
+            ], 
+            
                 order:[["fechaDePosteo","DESC"]]
             })
             .then(function(posts) {
-            res.render("home", {posts: posts});
+                res.render("home", {posts: posts});
             })
             .catch(error =>{
             console.log(error);
