@@ -102,6 +102,13 @@ img.foto-perfil-home{
     height: 40px;
     border-radius: 50%;
 }
+
+img.foto-perfil-detalle{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
 img.foto-home{
     width: 500px;
 }
