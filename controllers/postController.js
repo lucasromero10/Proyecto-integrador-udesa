@@ -65,27 +65,27 @@ let postController = {
                 res.redirect("/home");
             })
         } else {
-            res.redirect("/miPerfil/registracion")
+            res.redirect("/user/registracion")
         }        
     },
     // Actualizar datos del posteo
     actualizar: function (req, res) {
 
-        if (req.session.usuarioLog != undefined) {
+        if (req.session.usuarioLogueado != undefined) {
             let postActualizado = {
                 idUsuario: req.session.usuarioLogueado.id,
                 urlimagen: req.body.urlimagen,
-                pieDeFoto: req.body.texto, 
+                pieDeFoto: req.body.pieDeFoto, 
             };      
     
             db.Post.update(postActualizado, {
                 where: {
-                    id: req.body.idpost
+                    idposts: req.body.idposts
                 }
             })
     
             .then(function(){
-                res.redirect("/post/detallePost/" + req.body.idPost);
+                res.redirect("/post/detallePost/" + req.body.idposts);
             })
         } else {
             res.render("/user/registracion")
