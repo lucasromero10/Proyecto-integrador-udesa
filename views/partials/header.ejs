@@ -10,17 +10,17 @@
                         <li><a href="http://localhost:3000/home">Home</a></li>
                         
                         <% if ( typeof usuarioLogueado != "undefined" ) { %>
-                        <li><a href="http://localhost:3000/home/agregarPost">Postear</a></li>
-                        <li><a href="http://localhost:3000/miPerfil">Mi Perfil</a></li>
+                        <li><a href="http://localhost:3000/post/agregarPost">Postear</a></li>
+                        <li><a href="http://localhost:3000/user/miPerfil">Mi Perfil</a></li>
                         <li>
-                            <a href="/miPerfil/logout">Logout</a>
+                            <a href="/user/logout">Logout</a>
                         </li>
                         <% } else { %> 
                             <li>
-                                <a href="/miPerfil/registracion">Register</a>
+                                <a href="/user/registracion">Register</a>
                             </li>
                             <li>
-                                <a href="/miPerfil/login">Login</a>
+                                <a href="/user/login">Login</a>
                             </li>
                         <% } %> 
                     </ul>

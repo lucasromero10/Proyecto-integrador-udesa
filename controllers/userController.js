@@ -1,16 +1,45 @@
+
 let db = require('../database/models');
 let sequelize = db.sequelize;
 let bcrypt = require("bcryptjs");
 const { Op } = require("sequelize");
 
+let userController={
+    //Detalle Usuario vista
+    detalleUsuario: function (req,res){
+    let idUsusarios = req.params.id
 
-
-let miPerfilController = {
-    miPerfil: function(req, res) {
-        res.render('miPerfil', { title: 'miPerfil' })
-      },
-
+    db.Usuario.findByPk(idUsusarios,
+        {include:[
+            {association: "postUsuario"},
+        ]})
+    .then(function(elUsuario) {
+    res.render('detalleUsuario', {elUsuario: elUsuario});
+    })
+    .catch(error =>{
+    console.log(error);
+    })
+    },
+    // Vitsta miPerfil
+    miPerfil: function(req, res){
     
+        if (req.session.usuarioLogueado != undefined) {
+
+        db.Usuario.findByPk(req.session.usuarioLogueado.id,
+            {include:[
+                {association: "postUsuario"}
+            ]},
+            )
+
+        .then(function(usuario){
+            res.render("miPerfil", {usuario: usuario})
+        })
+        } else {
+            res.redirect("/home")
+        }  
+    },
+
+    //Registracion vista
     registracion: function (req, res) {
       if (req.session.usuarioLogueado != undefined) {
         res.redirect("/home");
@@ -18,6 +47,8 @@ let miPerfilController = {
 
     res.render("registracion");  
     },
+//Registracion base de datos
+
     storeUser: function(req, res) {
       if (req.session.usuarioLogueado != undefined) {
           res.redirect("/home");
@@ -44,6 +75,7 @@ let miPerfilController = {
           res.redirect("/home");
       })
   },
+  // Validacion Login
     login: function(req, res) {
       if (req.session.usuarioLogueado != undefined) {
           res.redirect("/home");
@@ -94,6 +126,7 @@ let miPerfilController = {
 
           
       },
+      // Editar Perfil
       editarPerfil: function (req, res){
 
         if (req.session.usuarioLog != undefined) {
@@ -122,17 +155,14 @@ perfilActualizar: function (req, res) {
     })
 
     .then(function(){
-        res.redirect("/miPerfil");
+        res.redirect("user/miPerfil");
     })
 },
-
+//Logout
       logout: function(req,res) {
           req.session.usuarioLogueado = undefined;
 
           res.redirect("/home");
       }
-
-  }
-  
-
-module.exports = miPerfilController;
+    }
+module.exports = userController;

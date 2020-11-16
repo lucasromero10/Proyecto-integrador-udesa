@@ -21,15 +21,18 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
             <div class="uk-container uk-container-large uk-flex">
                 <section id="posts" class="uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-child-width-1-2 uk-width-1-1">
                     
-                    <% for( let i = 0; i < 50; i++ ) { %>
+                    <% for( let i = 0; i < posts.length; i++ ) { %>
                     
                     
                     <article class="post uk-card-default uk-flex uk-flex-column">
                         <div class="info-usuario uk-flex ">
-                            <div> <a href="http://localhost:3000/home/detalleUsuario/<%= posts[i].idUsuario %>">
-                                <img src="<%= posts[i].urlimagen %>" alt="" class="foto-perfil-home"> </a>
+                            <div> <a href="http://localhost:3000/user/detalleUsuario/<%= posts[i].idUsuario %>">
+                                <!-- relacion foto de perfil -->
+                                <img src="<%= posts[i].postUsuario.fotoPerfil%>" alt="" class="foto-perfil-home"> </a>
                             </div>
-                            <a href="http://localhost:3000/home/detalleUsuario/<%= posts[i].idUsuario %>"> <h4>
+                            <a href="http://localhost:3000/user/detalleUsuario/<%= posts[i].idUsuario %>"> <h4>
+                                    <!-- relacion nombre de usuario -->
+
                                 <%=posts[i].postUsuario.nombre %>
                             </h4></a>
                         </div>
@@ -44,25 +47,22 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
                                 </li>
                             </ul>
                             <div class="post-pie uk-flex">
-                                <a href="http://localhost:3000/home/detalleUsuario/<%= posts[i].idUsuario %>"> <h5> <%= posts[i].postUsuario.nombre %>: </h5> </a>
+                                <a href="http://localhost:3000/user/detalleUsuario/<%= posts[i].idUsuario %>"> <h5> Pie de Foto <br> <%= posts[i].postUsuario.pieDeFoto %>: </h5> </a>
                                 <p class="">  <%= posts[i].pieDeFoto %> </p>
                             </div>
                         </div>
                         <div class="post-comentarios">
                             <h6>Comentarios</h6>
                             <ul>
-                                <% if (posts[i].comentario.length == 0) { %>
-                                    <li> <p>No hay comentarios :(</p></li>
-                                <%}else{%>
-                                <% for( let index = 0; index < 3; index++ ) { %>
+                                <% for( let index = 0; index < posts[i].comentario.length; index++ ) { %>
                                     <li>
-                                        <a href="http://localhost:3000/home/detalleUsuario/<%= posts[i].comentario[index].idusuario %>">Comentario usuario <%= posts[i].comentario[index].idusuario %>:</a>
+                                        <a href="http://localhost:3000/user/detalleUsuario/<%= posts[i].comentario[index].idusuario %>">Comentario usuario <%= posts[i].comentario[index].comentarioUsuario %>:</a>
                                             <p> <%= posts[i].comentario[index].comentario %></p>
                                         
                                     </li>
-                                <% }} %>
+                                <% } %>
                             </ul>
-                            <a href="http://localhost:3000/home/detallePost/<%= posts[i].idposts %>">Ver más...</a>
+                            <a href="http://localhost:3000/post/detallePost/<%= posts[i].idposts %>">Ver más...</a>
                         </div>
                     </article>
                     <% } %>
