@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         tableName: "posts",
         timestamps: false
     }
-
+     // relaciones
     let Post = sequelize.define("Post", cols, config);
 
     Post.associate = function (models){
