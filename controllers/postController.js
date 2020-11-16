@@ -71,11 +71,13 @@ let postController = {
     },
     comentario: function (req, res) {
             let comentario = {
-                idusuario: req.session.usuarioLogueado.id,
+                idusuario: req.session.usuarioLogueado.idUsuarios,
+                idpost: req.body.idposts,
+                fechaDeComentario: new Date(),
                 comentario: req.body.comentario,
             };      
     
-            db.comentario.create(comentario)
+            db.Comentario.create(comentario)
     
             .then(function(){
                 res.redirect("/home");

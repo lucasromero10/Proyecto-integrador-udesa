@@ -57,15 +57,17 @@
                                     <form action="/post/comentar" method="POST">
                                         <div class="uk-inline uk-width-1-1">
                                             <span class="uk-form-icon" uk-icon="icon: comment"></span>
-                                            <input name="texto" class="uk-input uk-form-large" type="comentario" placeholder="Comentario...">	
+                                            <input type="hidden" name="idposts" value="<%=post.idposts%>">
+                                            <input type="hidden" name="idUsuarios" value="<%=post.postUsuario.idUsuarios%>">
+                                            <input type="text" class="uk-input uk-form-large" name="comentario" placeholder="Comentario...">	
                                         </div>
-                                        <button class="uk-button uk-button-primary uk-button-large uk-width-1-1">COMENTAR</button>
+                                        <button class="uk-button uk-button-primary uk-button-large uk-width-1-1" type="submit">COMENTAR</button>
                                     </form>
                                 </div>
                                 <br>
                                 <div class="agregar-comentario uk-flex uk-flex-middle">
-                                    <form action="post/editar/" method="POST">
-                                        <button class="uk-button uk-button-primary uk-button-large uk-width-1-1">Editar Posteo</button>
+                                    <form action="editar/<%=post.idposts%>" method="POST">
+                                        <button class="uk-button uk-button-primary uk-button-large uk-width-1-1" type="submit">Editar Posteo</button>
                                     </form>
                                 </div> 
                     <% }else{ %>
@@ -73,7 +75,9 @@
                             <form action="/post/comentar" method="POST">
                                 <div class="uk-inline uk-width-1-1">
                                     <span class="uk-form-icon" uk-icon="icon: comment"></span>
-                                    <input name="texto" class="uk-input uk-form-large" type="comentario" placeholder="Comentario...">	
+                                    <input type="hidden" name="idposts" value="<%=post.idposts%>">
+                                    <input type="hidden" name="idUsuarios" value="<%=post.postUsuario.idUsuarios%>">
+                                    <input type="text" class="uk-input uk-form-large" name="comentario" placeholder="Comentario...">	
                                 </div>
                                 <button class="uk-button uk-button-primary uk-button-large uk-width-1-1">COMENTAR</button>
                             </form>

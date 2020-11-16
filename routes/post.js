@@ -10,7 +10,9 @@ router.post("/agregar", postController.nuevoPost);
 
 router.post("/borrar", postController.borrar)
 
-router.get("/editar/:id", postController.editar)
+router.post("/comentar", postController.comentario)
+
+router.get("/detallePost/editar/:id", postController.editar)
 
 router.post("/actualizar", postController.actualizar)
 
