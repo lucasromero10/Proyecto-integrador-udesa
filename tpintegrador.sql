@@ -84,6 +84,8 @@ CREATE TABLE `usuarios` (
   `contrasenia` varchar(255) NOT NULL,
   `email` varchar(45) DEFAULT NULL,
   `fotoPerfil` varchar(20000) DEFAULT NULL,
+  `pregSeguridad` varchar(200) DEFAULT NULL,
+  `resSeguridad` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`idUsuarios`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -94,7 +96,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Tony Montana','tonymontana','tonymontana@gmail.com','https://upload.wikimedia.org/wikipedia/en/1/19/Tony_Montana_in_Scarface_%281983%29%2C_portrayed_by_Al_Pacino.jpg'),(2,'Vito Corleone','vitocorleone','vitocorleone@gmail.com','https://www.opusvida.com/wp-content/uploads/2010/05/vito_corleone_11.jpg'),(3,'Michael Corleone','michaelcorleone','michaelcorleone@gmail.com','https://static.wikia.nocookie.net/godfather/images/a/aa/Michael_Corleone_Part_I.jpg/revision/latest/top-crop/width/360/height/450?cb=20190828200514'),(4,'Jhon Gotti','jhongotti','jhongotti@gmail.com','https://pbs.twimg.com/profile_images/628863908644696064/Ud4JwGF6.jpg'),(5,'Michael Franzese','michaelfranzese','michaelfranzese@gmail.com','https://static.wikia.nocookie.net/mafia/images/3/37/Michael_Franzese.jpg/revision/latest/scale-to-width-down/340?cb=20120925182959'),(6,'Justo M','$2a$10$VXiNi.OMmkU.Gu2FOiNE0e5wAbeS4TKfDrg/awCRCiOJ1mhBweZ.O','justo@gmailc','https://www.notariosenred.com/wp-content/uploads/2015/02/Eduardo-Sebati%C3%A1n-Amat.jpg'),(7,'justo','$2a$10$7AiPBDh9908zdRPJRWM6ze.a.EQtUMFxexo5a4xBr/9uuOYjnoljG','justo@gmail.com','https://www.notariosenred.com/wp-content/uploads/2015/02/Eduardo-Sebati%C3%A1n-Amat.jpg'),(8,'Justo Enrique Mansilla','$2a$10$5AWyntkc1UPOXKHZZ9AO9exM7PgGOqMR8X2rWYpnGJWwwcxuUG.8m','mansilla@gmail.com','https://www.notariosenred.com/wp-content/uploads/2015/02/Eduardo-Sebatián-Amat.jpg');
+INSERT INTO `usuarios` VALUES (1,'Tony Montana','tonymontana','tonymontana@gmail.com','https://upload.wikimedia.org/wikipedia/en/1/19/Tony_Montana_in_Scarface_%281983%29%2C_portrayed_by_Al_Pacino.jpg',NULL,NULL),(2,'Vito Corleone','vitocorleone','vitocorleone@gmail.com','https://www.opusvida.com/wp-content/uploads/2010/05/vito_corleone_11.jpg',NULL,NULL),(3,'Michael Corleone','michaelcorleone','michaelcorleone@gmail.com','https://static.wikia.nocookie.net/godfather/images/a/aa/Michael_Corleone_Part_I.jpg/revision/latest/top-crop/width/360/height/450?cb=20190828200514',NULL,NULL),(4,'Jhon Gotti','jhongotti','jhongotti@gmail.com','https://pbs.twimg.com/profile_images/628863908644696064/Ud4JwGF6.jpg',NULL,NULL),(5,'Michael Franzese','michaelfranzese','michaelfranzese@gmail.com','https://static.wikia.nocookie.net/mafia/images/3/37/Michael_Franzese.jpg/revision/latest/scale-to-width-down/340?cb=20120925182959',NULL,NULL),(6,'Justo M','$2a$10$VXiNi.OMmkU.Gu2FOiNE0e5wAbeS4TKfDrg/awCRCiOJ1mhBweZ.O','justo@gmailc','https://www.notariosenred.com/wp-content/uploads/2015/02/Eduardo-Sebati%C3%A1n-Amat.jpg',NULL,NULL),(7,'justo','$2a$10$7AiPBDh9908zdRPJRWM6ze.a.EQtUMFxexo5a4xBr/9uuOYjnoljG','justo@gmail.com','https://www.notariosenred.com/wp-content/uploads/2015/02/Eduardo-Sebati%C3%A1n-Amat.jpg',NULL,NULL),(8,'Justo Enrique Mansilla','$2a$10$5AWyntkc1UPOXKHZZ9AO9exM7PgGOqMR8X2rWYpnGJWwwcxuUG.8m','mansilla@gmail.com','https://www.notariosenred.com/wp-content/uploads/2015/02/Eduardo-Sebatián-Amat.jpg',NULL,NULL);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -107,4 +109,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-16  3:28:27
+-- Dump completed on 2020-11-16  3:36:08
