@@ -56,8 +56,6 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
                             <ul>
                                 <%if (posts[i].comentario.length == 0) {%>
                                     <li><p>No hay comentarios :(</p></li>
-                                </ul>
-                                <a href="http://localhost:3000/post/detallePost/<%= posts[i].idposts %>">Hace el primer comentario</a>
                                 <%}else{%>
                                 <% for( let index = 0; index < 3; index++ ) { %>
                                     <li>
@@ -65,10 +63,13 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
                                             <p> <%= posts[i].comentario[index].comentario %></p>
                                         
                                     </li>
-                                </ul>
-                                <a href="http://localhost:3000/post/detallePost/<%= posts[i].idposts %>">Ver los <%=posts[i].comentario.length %> comentarios</a>
                                 <% }} %>
-                            
+                            </ul>
+                            <%if (posts[i].comentario.length == 0) {%>
+                                <a href="http://localhost:3000/post/detallePost/<%= posts[i].idposts %>">Hace el primer comentario!</a>
+                            <%}else{%>
+                            <a href="http://localhost:3000/post/detallePost/<%= posts[i].idposts %>">Ver los <%=posts[i].comentario.length %> comentarios</a>
+                            <%}%>
                         </div>
                     </article>
                     <% } %>
