@@ -8,7 +8,7 @@ router.get("/agregar", postController.agregarPost);
 
 router.post("/agregar", postController.nuevoPost);
 
-router.post("/borrar", postController.borrar)
+router.post("/borrar/:id", postController.borrar)
 
 router.post("/comentar", postController.comentario)
 
