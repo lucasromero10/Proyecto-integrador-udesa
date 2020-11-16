@@ -86,7 +86,7 @@ let userController={
 
       res.render("login");
   },
-        processLogin: function(req, res) {
+        procesLogin: function(req, res) {
           console.log(req.body);
           if (req.session.usuarioLogueado != undefined) {
               res.redirect("/home");
@@ -114,11 +114,6 @@ let userController={
                   res.send("Mala contraseña")
               } else {
                   req.session.usuarioLogueado = usuario;
-
-                  if (req.body.remember != undefined) {
-                      res.cookie("idDelUsuarioLogueado", usuario.id, {maxAge : 1000 * 20});
-                  }
-
                   res.redirect("/home");
                   // Todo bien!
               }

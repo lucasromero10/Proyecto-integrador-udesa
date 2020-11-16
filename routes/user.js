@@ -5,7 +5,7 @@ let userController = require("../controllers/userController");
 //http://localhost:3000/user/login
 router.get("/login", userController.login)
 
-router.post("/login", userController.processLogin)
+router.post("/login", userController.procesLogin)
 //registracion
 router.get("/registracion", userController.registracion)
 //http://localhost:3000/user/registracion
