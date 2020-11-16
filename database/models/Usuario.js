@@ -23,6 +23,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         resSeguridad:{
             type:DataTypes.STRING
+        },
+        fechaDeNacimiento:{
+            type:DataTypes.STRING
         }
     }
 

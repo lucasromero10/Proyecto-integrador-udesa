@@ -23,7 +23,7 @@
             <%}else{%>
                 <h3>Usuarios Encontrados:</h3>
             <% for( let i = 0; i < usuarios.length; i++ ) { %>
-                <li><a href="http://localhost:3000/home/detalleUsuario/<%= usuarios[i].idUsuarios %>"style="text-decoration: none"><div class="grid-item"><%= usuarios[i].nombre %></div> </a></li>
+                <li><a href="http://localhost:3000/user/detalleUsuario/<%= usuarios[i].idUsuarios %>"style="text-decoration: none"><div class="grid-item"><%= usuarios[i].nombre %></div> </a></li>
             <% }} %>
             
             

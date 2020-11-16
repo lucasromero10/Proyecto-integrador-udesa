@@ -9,7 +9,7 @@ var usersRouter = require('./routes/users');
 var homeRouter = require('./routes/home');
 let userRouter = require("./routes/user.js");
 let postRouter = require("./routes/post");
-var session = require("express-session");
+var session = require('express-session');
 
 var app = express();
 
@@ -23,14 +23,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(session({ secret: "Cualquiercosa!!!" }));
-app.use(function(req, res, next) {
+app.use(session({ secret: "cualquiercosa!", resave: true, saveUninitialized: true }))
 
-  res.locals = {
+app.use(function(req, res, next){
+  res.locals = { 
     usuarioLogueado: req.session.usuarioLogueado
   }
-
-  next();
+  next()
 })
 
 app.use('/', indexRouter);

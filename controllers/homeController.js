@@ -31,11 +31,10 @@ let homeController = {
         
         db.Usuario.findAll(
             {
-                where: [
-                   { nombre: { [op.like]: "%" + queBuscoElUsuario + "%"} }
-                ],
-                order: ["nombre"],
-            }
+                where:{
+                    [op.or]: [{ nombre: { [op.like]: "%" + queBuscoElUsuario + "%"} }, { email: { [op.like]: "%" + queBuscoElUsuario + "%"} }],
+                }
+          }
         )
         .then(function(usuarios) {
             res.render("resultadoBusqueda", {usuarios: usuarios, queBuscoElUsuario: queBuscoElUsuario});

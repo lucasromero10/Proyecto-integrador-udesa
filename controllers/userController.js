@@ -1,8 +1,7 @@
 
 let db = require('../database/models');
-let sequelize = db.sequelize;
+let op = db.Sequelize.Op;
 let bcrypt = require("bcryptjs");
-const { Op } = require("sequelize");
 
 let userController={
     //Detalle Usuario vista
@@ -25,14 +24,14 @@ let userController={
     
         if (req.session.usuarioLogueado != undefined) {
 
-        db.Usuario.findByPk(req.session.usuarioLogueado.id,
+        db.Usuario.findByPk(req.session.usuarioLogueado.idUsuarios,
             {include:[
                 {association: "postUsuario"}
             ]},
             )
 
-        .then(function(usuario){
-            res.render("miPerfil", {usuario: usuario})
+        .then(function(elUsuario){
+            res.render("miPerfil", {elUsuario: elUsuario})
         })
         } else {
             res.redirect("/home")
@@ -60,6 +59,7 @@ let userController={
       let pregSeguridad = req.body.pregSeguridad;
       let resSeguridad = req.body.resSeguridad;
       let fotoPerfil = req.body.fotoPerfil;
+      let fechaDeNacimiento = req.body.fecha;
 
       let user = {
           nombre: nombre,
@@ -68,6 +68,7 @@ let userController={
           email: email,
           resSeguridad: resSeguridad,
           pregSeguridad: pregSeguridad,
+          fechaDeNacimiento: fechaDeNacimiento,
       }
 
       db.Usuario.create(user)
@@ -79,53 +80,45 @@ let userController={
     login: function(req, res) {
       if (req.session.usuarioLogueado != undefined) {
           res.redirect("/home");
-          //Post.findAll({
-            //where: {
-         //[Op.or]: [{ a: 5 }, { b: 6 }]
       }
 
       res.render("login");
   },
         procesLogin: function(req, res) {
-          console.log(req.body);
+
           if (req.session.usuarioLogueado != undefined) {
               res.redirect("/home");
-          }
-          // Caso 1: El mail no esta en la base de datos y yo voy a tener que decirle al usuario: NO EXISTE
-          // Caso 2: El mail si existe pero la contraseña esta mal. Le tengo que decir al usuario: Usuario invalido
-          // Caso 3: Bienvenido!
-
-          // Casos que no voy a hacer: Dejaste los campos vacios. El mail no es un mail directamente.
-
-
-          // findAll retorna SIEMPRE un array. Si no matchean los datos findAll traer un array vacío pero SIEMPRE trae un array
-          // findOne en cambio tiene dos opciones. O trae el dato, o trae null.
+          }else{
           db.Usuario.findOne(
               {
-                  where: [
-                      { email: req.body.email },
-                  ]
+                where:{
+                    [op.or]:[{email: req.body.usuarioOMail}, {nombre: req.body.usuarioOMail}]
+                }
               }
           )
           .then(function(usuario) {
               if (usuario == null) {
-                  res.send("El mail no existe")
+                  res.render("malMail")
               } else if (bcrypt.compareSync(req.body.contrasenia, usuario.contrasenia) == false) {
-                  res.send("Mala contraseña")
+                res.render("malaContrasenia")
               } else {
                   req.session.usuarioLogueado = usuario;
-                  res.redirect("/home");
-                  // Todo bien!
+
+                  if (req.body.recordar != undefined) {
+                    res.cookie("idUsuarios", usuario.idUsuarios, {expire : new Date() + 1000 * 100});
+                }
+                res.redirect("/home");
               }
           })
 
           
-      },
+      }},
+
       // Editar Perfil
       editarPerfil: function (req, res){
 
-        if (req.session.usuarioLog != undefined) {
-            db.Usuario.findByPk(req.session.usuarioLogueado.id)
+        if (req.session.usuarioLogueado != undefined) {
+            db.Usuario.findByPk(req.session.usuarioLogueado.idUsuarios)
             .then (function (usuario) {
                 res.render ("editarPerfil", {usuario: usuario})
             })
@@ -137,20 +130,30 @@ let userController={
 perfilActualizar: function (req, res) {
 
     let nuevosDatos = {
-        nombre: req.body.nombredeusuario,
-        email: req.body.email,
-        contraseña: bcrypt.hashSync(req.body.contrasenia, 10),
-        fotoDePerfil: req.body.fotoDePerfil
+        nombre = req.body.nombre,
+        email = req.body.email,
+        pregSeguridad = req.body.pregSeguridad,
+        resSeguridad = req.body.resSeguridad,
+        fotoPerfil = req.body.fotoPerfil,
+        fechaDeNacimiento = req.body.fecha,
     }
     
-    db.Usuario.update(nuevosDatos, {
-        where: {
-            id: req.session.usuarioLogueado.id
-        }
-    })
-
-    .then(function(){
-        res.redirect("user/miPerfil");
+    db.Usuario.findByPk(req.session.usuarioLogueado.idUsuarios)
+    .then(function(usuario){
+        if (usuario.pregSeguridad != nuevosDatos.pregSeguridad) {
+            res.render("malaPreg")
+        }else if (usuario.resSeguridad != nuevosDatos.resSeguridad) {
+            res.render("malaRes")
+        }else{
+            db.Usuario.update(
+                nuevosDatos,{
+                    where: {
+                        idUsuarios: req.session.usuarioLogueado.idUsuarios
+                    }
+                }
+            )
+            res.redirect("user/miPerfil")
+        };        
     })
 },
 //Logout

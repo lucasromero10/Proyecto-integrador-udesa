@@ -7,7 +7,6 @@
 </head>
 
 <body>
-    <%- //if usuarioLogueado%>
     <%- include("./partials/header") %> 
 
     <main>
@@ -27,7 +26,7 @@
                                 <li>180 posts</li>
                                 <li>20M seguidores</li>
                                 <li>227 seguidos</li>
-                                <li><a href="/user/editarPerfil">Editar Perfil</a></li>
+                                <li><a href="/user/editarPerfil"><button class="uk-button">Editar Perfil</button></a></li>
                             </ul>
                         </div>
                     </div>
@@ -36,10 +35,10 @@
 
                 <section class="muro uk-flex uk-flex-middle uk-flex-center">
                     <div class="uk-grid uk-child-width-1-3 uk-width-1-1 uk-margin-remove" uk-grid>
-                        <% for (let i = 0; i < 10; i++) {%>
+                        <% for (let i = 0; i < elUsuario.postUsuario.length ; i++) {%>
                             <div class="posteo uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                                <a href="/home/detallePost/<%=elUsuario.postUsuario[i].id%>" class="link-detalle">
-                                    <img src="<%= elUsuario.postUsuario.urlimagen %>" alt="foto de perfil" >
+                                <a href="/post/detallePost/<%=elUsuario.postUsuario[i].idposts%>" class="link-detalle">
+                                    <img src="<%= elUsuario.postUsuario[i].urlimagen %>" alt="foto de perfil" >
                                     
                                 </a>
                                 </a>

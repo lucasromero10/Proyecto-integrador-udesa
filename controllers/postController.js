@@ -7,6 +7,7 @@ let postController = {
         res.render('agregarPost', {title: 'agregarPost'})
     },
     // Detalle Post, hacer relaciones!
+
     detallePost: function (req, res) {
 
         var id = req.params.id;
@@ -16,9 +17,9 @@ let postController = {
                 {association: "postUsuario"},
                 {association: "comentario"}
             ]})
-            
-        .then(function(post){
-            res.render("detallePost", {post: post })
+          
+        .then(function(post){  
+                res.render("detallePost", {post: post })
         })
     },
     //Borrar Post
@@ -54,13 +55,12 @@ let postController = {
 
         if (req.session.usuarioLogueado != undefined) {
             let nuevoPost = {
-                idUsuario: req.session.usuarioLogueado.id,
+                idUsuario: req.session.usuarioLogueado.idUsuario,
                 urlimagen: req.body.urlimagen,
                 pieDeFoto: req.body.texto,
             };      
     
-            db.Post.create(nuevoPost)
-    
+            db.Post.create(nuevoPost)    
             .then(function(){
                 res.redirect("/home");
             })
