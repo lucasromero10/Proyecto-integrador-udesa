@@ -10,7 +10,7 @@ router.post("/login", userController.processLogin)
 router.get("/registracion", userController.registracion)
 //http://localhost:3000/user/registracion
 
-router.post("/registracion", userController.registracion)
+router.post("/registracion", userController.registroUsuario)
 
 
 //http://localhost:3000/user/detalleUsuario

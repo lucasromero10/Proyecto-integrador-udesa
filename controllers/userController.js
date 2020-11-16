@@ -49,7 +49,7 @@ let userController={
     },
 //Registracion base de datos
 
-    storeUser: function(req, res) {
+    registroUsuario: function(req, res) {
       if (req.session.usuarioLogueado != undefined) {
           res.redirect("/home");
       }
