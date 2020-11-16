@@ -15,11 +15,11 @@
             <div class="uk-container uk-container-small">
                 <section class="info-usuario uk-flex uk-flex-around uk-width-1-1">
                     <div class="uk-width-1-3 uk-flex uk-flex-center uk-flex-middle">
-                        <img src="https://www.diarioshow.com/__export/1549028576032/sites/cronica/img/2019/02/01/_fiesta_lanzamiento_fotos_antonella_roccuzzo_x_leo_messi_xbx_1_crop1549028367635.jpg_792575817.jpg" alt="foto de perfil" class="foto-perfil">
+                        <img src="<%=usuarios.fotoPerfil%>" alt="foto de perfil" class="foto-perfil">
                     </div>
                     <div class="uk-width-2-3 uk-flex uk-flex-column uk-flex-around">
                         <div class="uk-flex uk-flex-middle">
-                            <h3 class="h3-general uk-margin-remove">hola</h3>
+                            <h3 class="h3-general uk-margin-remove"><%= usuario.nombre %></h3>
                             <a href="" uk-icon="icon:cog; ratio: 1.2" class="uk-margin-left"></a>
                         </div>
                         <div>
@@ -36,53 +36,15 @@
 
                 <section class="muro uk-flex uk-flex-middle uk-flex-center">
                     <div class="uk-grid uk-child-width-1-3 uk-width-1-1 uk-margin-remove" uk-grid>
-                        
-
-                        <div
-                            class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="http://localhost:3000/home/detallePost/1" class="link-detalle">
-                                <img src="https://via.placeholder.com/200" alt="foto de perfil" class="foto-perfil">
-                                <p class="uk-text-center">Temporada en Ibiza</p>
-                            </a>
-                        </div>
-                        <div
-                            class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="http://localhost:3000/home/detallePost/1" class="link-detalle">
-                                <img src="https://via.placeholder.com/200" alt="foto de perfil" class="foto-perfil">
-                                <p class="uk-text-center">Ibiza 2019</p>
-                            </a>
-                        </div>
-                        <div
-                            class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="http://localhost:3000/home/detallePost/1" class="link-detalle">
-                                <img src="https://via.placeholder.com/200" alt="foto de perfil" class="foto-perfil">
-                                <p class="uk-text-center">Aprendiendo de pibes</p>
-                            </a>
-                        </div>
-                        <div
-                            class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="http://localhost:3000/home/detallePost/1" class="link-detalle">
-                                <img src="https://via.placeholder.com/200" alt="foto de perfil" class="foto-perfil">
-                                <p class="uk-text-center">Entrenando para comerme el mundo</p>
-                            </a>
-                        </div>
-                        <div
-                            class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="http://localhost:3000/home/detallePost/1" class="link-detalle">
-                                <img src="https://via.placeholder.com/200" alt="foto de perfil" class="foto-perfil">
-                                <p class="uk-text-center">Asado de Domingo</p>
-                            </a>
-                        </div>
-                        <div
-                            class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="http://localhost:3000/home/detallePost/1" class="link-detalle">
-                                <img src="https://via.placeholder.com/200" alt="foto de perfil" class="foto-perfil">
-                                <p class="uk-text-center">Champions League 2015</p>
-                            </a>
-                        </div>
-
-
-
+                        <% for (let i = 0; i < 10; i++) {%>
+                            <div class="posteo uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
+                                <a href="/home/detallePost/<%=usuario.postUsuario[i].id%>" class="link-detalle">
+                                    <img src="<%=usuario.postUsuario[i].urlimagen%>" alt="foto de perfil" >
+                                    <p class="uk-text-center"><%=usuario.postUsuario[i].pieDeFoto%></p>
+                                </a>
+                                </a>
+                            </div> 
+                        <%}%>
                     </div>
                 </section>
             </div>
