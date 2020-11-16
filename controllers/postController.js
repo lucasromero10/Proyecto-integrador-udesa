@@ -24,21 +24,16 @@ let postController = {
     },
     //Borrar Post
     borrar: function(req, res){
-
-        if (req.session.usuarioLogueado == req.body.idUsuarios) {
-            var idPostBorrar = req.body.idPost;
+            
+        var idPostBorrar = req.params.id;
 
         db.Post.destroy({
             where: {
-                id: idPostBorrar
+                idposts: idPostBorrar
             }
         })
-
         res.redirect("/home")
-        } else {
-            res.redirect("/home/detallePost/" + req.body.idPost)
-        }        
-    },
+        },
     //Editar Post
     editar: function(req, res){
 
