@@ -20,6 +20,12 @@ module.exports = (sequelize, DataTypes) => {
         },
         fotoPerfil:{
             type:DataTypes.STRING
+        },
+        pregSeguridad:{
+            type:DataTypes.STRING
+        },
+        resSeguridad:{
+            type:DataTypes.STRING
         }
     }
 
