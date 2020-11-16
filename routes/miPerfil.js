@@ -15,6 +15,9 @@ router.post("/login", miPerfilController.processLogin);
 
 router.get("/logout", miPerfilController.logout);
 
+router.get ("/editarPerfil", miPerfilController.editarPerfil)
+
+router.post ("/editarPerfil", miPerfilController.perfilActualizar)
 
 
 module.exports = router;

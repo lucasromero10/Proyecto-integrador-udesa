@@ -94,6 +94,37 @@ let miPerfilController = {
 
           
       },
+      editarPerfil: function (req, res){
+
+        if (req.session.usuarioLog != undefined) {
+            db.Usuario.findByPk(req.session.usuarioLogueado.id)
+            .then (function (usuario) {
+                res.render ("editarPerfil", {usuario: usuario})
+            })
+        } else {
+            res.redirect("/home")
+        }
+    },
+
+perfilActualizar: function (req, res) {
+
+    let nuevosDatos = {
+        nombre: req.body.nombredeusuario,
+        email: req.body.email,
+        contraseña: bcrypt.hashSync(req.body.contrasenia, 10),
+        fotoDePerfil: req.body.fotoDePerfil
+    }
+    
+    db.Usuario.update(nuevosDatos, {
+        where: {
+            id: req.session.usuarioLogueado.id
+        }
+    })
+
+    .then(function(){
+        res.redirect("/miPerfil");
+    })
+},
 
       logout: function(req,res) {
           req.session.usuarioLogueado = undefined;
@@ -102,5 +133,6 @@ let miPerfilController = {
       }
 
   }
+  
 
 module.exports = miPerfilController;
