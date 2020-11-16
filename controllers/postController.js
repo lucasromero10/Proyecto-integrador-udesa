@@ -76,8 +76,7 @@ let postController = {
                 idUsuario: req.session.usuarioLogueado.id,
                 urlimagen: req.body.urlimagen,
                 pieDeFoto: req.body.pieDeFoto, 
-            };      
-    
+            };   
             db.Post.update(postActualizado, {
                 where: {
                     idposts: req.body.idposts
