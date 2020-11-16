@@ -23,13 +23,14 @@
                             <img src="<%= post.postUsuario.fotoPerfil %>" alt="Foto del usuario" class="foto-perfil-home"></a>
                             <a href="http://localhost:3000/user/detalleUsuario/<%= post.postUsuario.idUsuarios %>"> <h3><%= post.postUsuario.nombre %></h3></a>
                             <% if (usuarioLogueado == undefined) { %>
-                            <% }else if (usuarioLogueado.idUsuarios == post.idusuario) { %>
+                            <% }else if (usuarioLogueado.idUsuarios == post.idUsuario) { %>
+
                                     <form action="/post/borrar" method="POST">
-                                    <input type="hidden" name="idPost" value="<%=post.id%>">
-                                    <input type="hidden" name="idUsuario" value="<%=post.idusuario%>">
-                                    <button type="submit" class="boton1"> Borrar Post</button>
+                                        <input type="hidden" name="idPost" value="<%=post.id%>">
+                                        <input type="hidden" name="idUsuario" value="<%=post.idusuario%>">
+                                        <button type="submit" class="uk-button boton1"> Borrar Post</button>
                                     </form>
-                                    <a href="/post/editarPost/<%=post.idposts%>" class="link">Editar Post</a>
+
                                 <% } %> 
                         </div>
                         <div class="lista-comentarios" >
@@ -51,7 +52,7 @@
 
                         <% if (usuarioLogueado == undefined) { %>
                             <p>Logueate para comentar</p>
-                        <% }else if (usuarioLogueado.idUsuarios == post.idusuario) { %>
+                        <% }else if (usuarioLogueado.idUsuarios == post.idUsuario) { %>
                                 <div class="agregar-comentario uk-flex uk-flex-middle">
                                     <form action="/post/comentar" method="POST">
                                         <div class="uk-inline uk-width-1-1">
@@ -61,8 +62,11 @@
                                         <button class="uk-button uk-button-primary uk-button-large uk-width-1-1">COMENTAR</button>
                                     </form>
                                 </div>
+                                <br>
                                 <div class="agregar-comentario uk-flex uk-flex-middle">
-                                    <a class="uk-button uk-button-primary uk-margin-small-top" href="/post/editar/<%=post.idposts%>"> Editar Posteo</a>
+                                    <form action="post/editar/" method="POST">
+                                        <button class="uk-button uk-button-primary uk-button-large uk-width-1-1">Editar Posteo</button>
+                                    </form>
                                 </div> 
                     <% }else{ %>
                         <div class="agregar-comentario uk-flex uk-flex-middle">
