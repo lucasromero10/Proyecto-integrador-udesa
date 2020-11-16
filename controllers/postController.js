@@ -2,6 +2,15 @@ let db = require('../database/models/index');
 let op = db.Sequelize.Op;
 
 
+//En esta seccion vamos a encontrar todo lo relacionado con CRUD (las siglas son CREATE, RELACIONES, UPDATE, DESTROY)
+// CREATE lo usamos para incorporar los postesos/comentarios a la base de datos
+// RELACIONES las usamos para poder usar info. de disintas tablas en una misma vista, sean los onmbres de los perfiles
+// o los comentarios de los usuarios
+//UPDATE lo usamos para poder cambiar/actualizar la informacion de los usuarios y de los posteos especificos e imprimirlas en las vistas
+//DESTROY lo usamos para borrar los posteos de las bases de datos y que desaparezcan de las vistas
+
+
+
 let postController = {
     agregarPost: function (req, res) {
         res.render('agregarPost', {title: 'agregarPost'})
@@ -26,7 +35,7 @@ let postController = {
     borrar: function(req, res){
             
         var idPostBorrar = req.params.id;
-//destroy
+    //destroy
         db.Post.destroy({
             where: {
                 idposts: idPostBorrar
@@ -45,7 +54,7 @@ let postController = {
             res.render("editarPost", {post: post})
         })
     },
-// agregar nuevo post a la base de datos
+    // agregar nuevo post a la base de datos
     nuevoPost: function (req, res) {
 
         if (req.session.usuarioLogueado != undefined) {
@@ -55,7 +64,7 @@ let postController = {
                 pieDeFoto: req.body.texto,
                 fechaDePosteo: new Date(),
             };      
-    //create
+            //create
             db.Post.create(nuevoPost)    
             .then(function(){
                 res.redirect("/home");

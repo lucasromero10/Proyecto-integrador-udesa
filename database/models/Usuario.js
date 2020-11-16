@@ -30,13 +30,16 @@ module.exports = (sequelize, DataTypes) => {
     }
 
 
+    //  El objeto contiene todas las columnas que encontramos en la base de datos (workbench) junto con los tipos de datos de las mismas
+    // sea STRING (texto) o DATE (fecha en formato datetime)
+
     let config = {
         tableName: "usuarios",
         timestamps: false
     }
 
     let Usuario = sequelize.define("Usuario", cols, config);
-
+    // relaciones
     Usuario.associate = function (models){
         Usuario.hasMany(models.Post, {
             as: "postUsuario",

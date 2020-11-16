@@ -25,6 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({ secret: "cualquiercosa!", resave: true, saveUninitialized: true }))
 
+
+// Esta es la variable que usamos en todos los "usuarioLogueado" en los controladores
 app.use(function(req, res, next){
   res.locals = { 
     usuarioLogueado: req.session.usuarioLogueado

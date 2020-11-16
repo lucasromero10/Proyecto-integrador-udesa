@@ -20,6 +20,9 @@ module.exports = (sequelize, DataTypes) => {
         }
     }
 
+    //  El objeto contiene todas las columnas que encontramos en la base de datos (workbench) junto con los tipos de datos de las mismas
+    // sea STRING (texto) o DATE (fecha en formato datetime)
+
 
     let config = {
         tableName: "comentarios",
@@ -27,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     let Comentario = sequelize.define("Comentario", cols, config);
-
+    // relaciones
     Comentario.associate = function (models){
         Comentario.belongsTo(models.Post, {
             as: "comentarios",

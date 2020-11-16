@@ -3,6 +3,14 @@ let db = require('../database/models');
 let op = db.Sequelize.Op;
 let bcrypt = require("bcryptjs");
 
+
+// En este controlador agregamos la funcionalidad de encriptacion de contrasenias y las cookies del site para que el usuario
+// quede logueado por un tiempo determinado (20 secs) en la pagina.
+// A diferencia del postController, en este se pueden crear y modificar los datos del usuario, por lo que vemos devuelta el uso del
+// CREATE y del UPDATE (parte del CRUD).
+// A su vez, encontramos la funcinoalidad para el proceso de LOGIN y de LOGOUT
+// La variable "usuarioLogueado" la encontramos en el app.js
+
 let userController={
     //Detalle Usuario vista
     detalleUsuario: function (req,res){
@@ -23,7 +31,7 @@ let userController={
     miPerfil: function(req, res){
     
         if (req.session.usuarioLogueado != undefined) {
-
+        //RELACIONES        
         db.Usuario.findByPk(req.session.usuarioLogueado.idUsuarios,
             {include:[
                 {association: "postUsuario"}
@@ -46,7 +54,7 @@ let userController={
 
     res.render("registracion");  
     },
-//Registracion base de datos
+    //Registracion del usuario base de datos
 
     registroUsuario: function(req, res) {
       if (req.session.usuarioLogueado != undefined) {
