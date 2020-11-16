@@ -28,7 +28,7 @@ let miPerfilController = {
       let email = req.body.email;
       let pregSeguridad = req.body.pregSeguridad;
       let resSeguridad = req.body.resSeguridad;
-      let resSeguridad = req.body.fotoPerfil;
+      let fotoPerfil = req.body.fotoPerfil;
 
       let user = {
           nombre: nombre,
