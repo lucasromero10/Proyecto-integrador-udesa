@@ -36,8 +36,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/home', homeRouter);
 app.use("/post", postRouter);
-
-
 app.use("/user", userRouter);
 
 

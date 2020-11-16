@@ -14,7 +14,7 @@ let homeController = {
                 {association: "comentario"}
             ], 
             
-            //    order:[["fechaDePosteo","DESC"]]
+               order:[["fechaDePosteo","DESC"]]
             })
             .then(function(posts) {
                // res.send(posts)

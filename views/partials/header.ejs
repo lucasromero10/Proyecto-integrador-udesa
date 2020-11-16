@@ -3,16 +3,23 @@
         <div class="">
             <nav class="" uk-navbar>
                 <div class="uk-navbar-left">
-                    <h2 class="logo"><a href="http://localhost:3000/home">JilBook</a></h2>
+                    <h2 class="logo">
+                        <a href="http://localhost:3000/home">JilBook</a> 
+                    </h2>
+                    
                 </div>
                 <div class="uk-navbar-center">
                     <ul class="uk-flex uk-flex-between uk-flex-middle">
                         <li><a href="http://localhost:3000/home">Home</a></li>
                         
                         <% if ( typeof usuarioLogueado != "undefined" ) { %>
-                        <li><a href="http://localhost:3000/post/agregar">Postear</a></li>
-                        <li><a href="http://localhost:3000/user/miPerfil">Mi Perfil</a></li>
                         <li>
+                            <a href="http://localhost:3000/user/miPerfil">Mi Perfil</a>
+                        </li>
+                        <li>
+                            <a href="http://localhost:3000/post/agregar">Postear</a>
+                        </li>
+                        <li class="li-derecha">
                             <a href="/user/logout">Logout</a>
                         </li>
                         <% } else { %> 

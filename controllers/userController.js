@@ -130,12 +130,12 @@ let userController={
 perfilActualizar: function (req, res) {
 
     let nuevosDatos = {
-        nombre = req.body.nombre,
-        email = req.body.email,
-        pregSeguridad = req.body.pregSeguridad,
-        resSeguridad = req.body.resSeguridad,
-        fotoPerfil = req.body.fotoPerfil,
-        fechaDeNacimiento = req.body.fecha,
+        nombre: req.body.nombre,
+        email: req.body.email,
+        pregSeguridad: req.body.pregSeguridad,
+        resSeguridad: req.body.resSeguridad,
+        fotoPerfil: req.body.fotoPerfil,
+        fechaDeNacimiento: req.body.fecha,
     }
     
     db.Usuario.findByPk(req.session.usuarioLogueado.idUsuarios)
@@ -152,7 +152,7 @@ perfilActualizar: function (req, res) {
                     }
                 }
             )
-            res.redirect("user/miPerfil")
+            res.redirect("/user/miPerfil")
         };        
     })
 },

@@ -35,10 +35,12 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
 
                                 <%=posts[i].postUsuario.nombre %>
                             </h4></a>
+                    <a href="http://localhost:3000/post/detallePost/<%= posts[i].idposts %>">
                         </div>
                         <div  class="post-body uk-flex uk-flex-center">
                             <img src="<%= posts[i].urlimagen %>" alt="" class="foto-home">
                         </div>
+                    </a>
                         <div class="post-reacciones">
                             <ul class="post-icons uk-flex uk-flex-between">
                                 <li><span class="" uk-icon="icon:heart; ratio: 1.3"></span>
