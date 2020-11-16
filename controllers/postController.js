@@ -102,7 +102,7 @@ let postController = {
             })
     
             .then(function(){
-                res.redirect("/post/detallePost/" + req.body.idposts);
+                res.redirect("/post/detallePost/" + req.body.id);
             })
         } else {
             res.render("/user/registracion")

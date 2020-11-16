@@ -12,7 +12,7 @@ router.post("/borrar", postController.borrar)
 
 router.post("/comentar", postController.comentario)
 
-router.get("/detallePost/editar/:id", postController.editar)
+router.get("/editar/:id", postController.editar)
 
 router.post("/actualizar", postController.actualizar)
 
