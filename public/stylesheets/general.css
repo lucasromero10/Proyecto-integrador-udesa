@@ -109,6 +109,12 @@ img.foto-perfil-detalle{
     border-radius: 50%;
 }
 
+img.foto-perfil-comentario{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
 img.foto-home{
     width: 500px;
 }

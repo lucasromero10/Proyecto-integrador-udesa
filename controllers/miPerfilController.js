@@ -26,11 +26,17 @@ let miPerfilController = {
       let nombre = req.body.nombre;
       let contrasenia = bcrypt.hashSync(req.body.contrasenia, 10);
       let email = req.body.email;
+      let pregSeguridad = req.body.pregSeguridad;
+      let resSeguridad = req.body.resSeguridad;
+      let resSeguridad = req.body.fotoPerfil;
 
       let user = {
           nombre: nombre,
+          fotoPerfil: fotoPerfil,
           contrasenia: contrasenia,
-          email: email
+          email: email,
+          resSeguridad: resSeguridad,
+          pregSeguridad: pregSeguridad,
       }
 
       db.Usuario.create(user)
