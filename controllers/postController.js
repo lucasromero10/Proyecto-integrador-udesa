@@ -85,10 +85,10 @@ let postController = {
             })
     
             .then(function(){
-                res.redirect("/home/detallePost/" + req.body.idPost);
+                res.redirect("/post/detallePost/" + req.body.idPost);
             })
         } else {
-            res.render("/miPerfil/registracion")
+            res.render("/user/registracion")
         }        
     },
 }
