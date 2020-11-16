@@ -55,9 +55,10 @@ let postController = {
 
         if (req.session.usuarioLogueado != undefined) {
             let nuevoPost = {
-                idUsuario: req.session.usuarioLogueado.idUsuario,
+                idUsuario: req.session.usuarioLogueado.id,
                 urlimagen: req.body.urlimagen,
                 pieDeFoto: req.body.texto,
+                fechaDePosteo: new Date(),
             };      
     
             db.Post.create(nuevoPost)    
@@ -73,7 +74,7 @@ let postController = {
 
         if (req.session.usuarioLogueado != undefined) {
             let postActualizado = {
-                idUsuario: req.session.usuarioLogueado.id,
+                idUsuario: req.session.usuarioLogueado.idUsuario,
                 urlimagen: req.body.urlimagen,
                 pieDeFoto: req.body.pieDeFoto, 
             };   
