@@ -69,6 +69,21 @@ let postController = {
             res.redirect("/user/registracion")
         }        
     },
+    comentario: function (req, res) {
+            let comentario = {
+                idusuario: req.session.usuarioLogueado.id,
+                comentario: req.body.comentario,
+            };      
+    
+            db.comentario.create(comentario)
+    
+            .then(function(){
+                res.redirect("/home");
+            })
+        
+            res.redirect("/user/registracion")
+                
+    },
     // Actualizar datos del posteo
     actualizar: function (req, res) {
 
