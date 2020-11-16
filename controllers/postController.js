@@ -25,7 +25,7 @@ let postController = {
     //Borrar Post
     borrar: function(req, res){
 
-        if (req.session.usuarioLogueado == req.body.idUsuario) {
+        if (req.session.usuarioLogueado == req.body.idUsuarios) {
             var idPostBorrar = req.body.idPost;
 
         db.Post.destroy({
@@ -55,7 +55,7 @@ let postController = {
 
         if (req.session.usuarioLogueado != undefined) {
             let nuevoPost = {
-                idUsuario: req.session.usuarioLogueado.id,
+                idUsuario: req.session.usuarioLogueado.idUsuarios,
                 urlimagen: req.body.urlimagen,
                 pieDeFoto: req.body.texto,
                 fechaDePosteo: new Date(),
@@ -74,7 +74,7 @@ let postController = {
 
         if (req.session.usuarioLogueado != undefined) {
             let postActualizado = {
-                idUsuario: req.session.usuarioLogueado.idUsuario,
+                idUsuarios: req.session.usuarioLogueado.idUsuarios,
                 urlimagen: req.body.urlimagen,
                 pieDeFoto: req.body.pieDeFoto, 
             };   
