@@ -26,7 +26,7 @@ let postController = {
     borrar: function(req, res){
             
         var idPostBorrar = req.params.id;
-
+//destroy
         db.Post.destroy({
             where: {
                 idposts: idPostBorrar
@@ -55,7 +55,7 @@ let postController = {
                 pieDeFoto: req.body.texto,
                 fechaDePosteo: new Date(),
             };      
-    
+    //create
             db.Post.create(nuevoPost)    
             .then(function(){
                 res.redirect("/home");
