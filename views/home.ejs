@@ -47,22 +47,28 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
                                 </li>
                             </ul>
                             <div class="post-pie uk-flex">
-                                <a href="http://localhost:3000/user/detalleUsuario/<%= posts[i].idUsuario %>"> <h5> Pie de Foto <br> <%= posts[i].postUsuario.pieDeFoto %>: </h5> </a>
+                                <a href="http://localhost:3000/user/detalleUsuario/<%= posts[i].idUsuario %>"> <h5> <%= posts[i].postUsuario.nombre %>: </h5> </a>
                                 <p class="">  <%= posts[i].pieDeFoto %> </p>
                             </div>
                         </div>
                         <div class="post-comentarios">
                             <h6>Comentarios</h6>
                             <ul>
-                                <% for( let index = 0; index < posts[i].comentario.length; index++ ) { %>
+                                <%if (posts[i].comentario.length == 0) {%>
+                                    <li><p>No hay comentarios :(</p></li>
+                                </ul>
+                                <a href="http://localhost:3000/post/detallePost/<%= posts[i].idposts %>">Hace el primer comentario</a>
+                                <%}else{%>
+                                <% for( let index = 0; index < 3; index++ ) { %>
                                     <li>
                                         <a href="http://localhost:3000/user/detalleUsuario/<%= posts[i].comentario[index].idusuario %>">Comentario usuario <%= posts[i].comentario[index].comentarioUsuario %>:</a>
                                             <p> <%= posts[i].comentario[index].comentario %></p>
                                         
                                     </li>
-                                <% } %>
-                            </ul>
-                            <a href="http://localhost:3000/post/detallePost/<%= posts[i].idposts %>">Ver más...</a>
+                                </ul>
+                                <a href="http://localhost:3000/post/detallePost/<%= posts[i].idposts %>">Ver los <%=posts[i].comentario.length %> comentarios</a>
+                                <% }} %>
+                            
                         </div>
                     </article>
                     <% } %>
