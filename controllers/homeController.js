@@ -6,10 +6,9 @@ let op = db.Sequelize.Op;
 
 
 let homeController = {
-
     //Se incluyen las dos asociaciones hechas en el modelo para poder imprimir en la vista los nombres de los usuarios
     // y los comentarios realizados en los posts.
-    // Tambien, agregamos un "order" para que los podestos aparezcan de forma descendiente, de modo que aprece el ultimo primero,
+    // Tambien, agregamos un "order" para que los posteos aparezcan de forma descendiente, de modo que aprece el ultimo primero,
     // el de Jhon Gotti siempre va a aprecer primero porqeu en la bse de datos le pusimos fecha en 2021
 
     home: function(req, res) {  
